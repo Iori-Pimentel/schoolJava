@@ -1,3 +1,21 @@
+/**
+ * Name: Iori Z. Pimentel
+ * Date: Sep 7, 2022
+ * Activity Name and Number: Prelim Exercise Number 6
+ -----------------------------------------------------------------
+ Input: Product, Quantity, Unit Price, Discount, Cash Tendered from Scanner.
+ Processes: Find the values for the Output.
+ ------------------------------------------------------------------
+ Algorithm:
+ 1. totalPurchased = quantity * unitPrice;
+ 2. totalDiscount = totalPurchased * (discount / 100.0);
+ 3. amountToPay = totalPurchased - totalDiscount;
+ 4. change = cashTendered - amountToPay;
+ -------------------------------------------------------------------
+ Output: Total Purchase Amount, Total Discount, Amount To Be Paid, Change
+ Display results
+ */
+
 package prelim.exercises;
 
 import java.util.Scanner;
@@ -36,20 +54,6 @@ public class AlingNenaStore {
                            "Amount to Pay: " + amountToPay + "\n" +
                            "Change: " + change
                            );
-//        1. Sample Input:
-//
-//        Product: eggs
-//        Quantity: 12
-//        Unit Price: 5.00
-//        Discount: 10
-//        Cash Tendered: 100.00
-//
-//        Sample Output:
-//
-//        Total Purchase Amount: 60.00
-//        Total Discount: 6.00
-//        Amount To Be Paid: 54.00
-//        Change: 46.00
     }
 }
 

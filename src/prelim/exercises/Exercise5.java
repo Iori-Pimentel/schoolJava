@@ -1,3 +1,20 @@
+/**
+ * Name: Iori Z. Pimentel
+ * Date: Sep 7, 2022
+ * Activity Name and Number: Prelim Exercise Number 5
+ -----------------------------------------------------------------
+ Input: Three Numbers from Scanner
+ Processes: Do a bunch of operations on the given numbers
+ ------------------------------------------------------------------
+ Algorithm:
+ 1. n1 * n2 * n3
+ 2. (n1 + n2) / n3
+ 3. (n1 + n2) / (double) n3
+ 4. (n1 + n2 + n3) / 3
+ 5. n1^2, n2^2, n3^2
+ -------------------------------------------------------------------
+ Display results
+*/
 package prelim.exercises;
 
 import java.util.Scanner;
@@ -63,7 +80,4 @@ public class Exercise5 {
         System.out.println("The square of the three numbers is: " + n1Squared + ", " + n2Squared + ", " + n3Squared);
 
     }
-
-
-
 }
