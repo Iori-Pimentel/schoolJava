@@ -7,7 +7,7 @@
  Input: Amount to Withdraw using Scanner
  Processes: Calculate the amounts of bills for each denomination of 1000, 500, 100 
  Display results
- Output: Amount and total for each bills. Total for all values.
+ Output: Amount and total for each bill. Total for all values.
  ------------------------------------------------------------------
  Algorithm:
 1. nThousand = toWithdraw / 1000;
@@ -19,8 +19,6 @@
 4. thousandValue = nThousand * 1000;
 5. fiveHundredValue = nFiveHundred * 500;
 6. oneHundredValue = nOneHundred * 100;
-
-
  -------------------------------------------------------------------
  */
 
@@ -33,9 +31,21 @@ public class Dispenser {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("How much to withdraw: ");
-        int totalAmount = Integer.parseInt(keyboard.nextLine());
-        int toWithdraw = totalAmount;
+        int inputAmount = 0;
+        boolean isValid = false;
+        
+        while (!isValid) {
+            System.out.print("How much to withdraw: ");
+             inputAmount = Integer.parseInt(keyboard.nextLine());
+            
+            if (inputAmount < 0) {
+                System.out.println("The amount should be positive.");
+                continue;
+            }
+            isValid = true;
+        }    
+
+        int toWithdraw = inputAmount;
 
         int nThousand = toWithdraw / 1000;
         toWithdraw %= 1000;
@@ -60,7 +70,7 @@ public class Dispenser {
         System.out.println("$100 total value: $" + oneHundredValue);
 
         System.out.println();
-        System.out.println("Withdraw amount asked: $" + totalAmount);
+        System.out.println("Withdraw amount asked: $" + inputAmount);
         System.out.println("Withdraw amount given: $" + (thousandValue + fiveHundredValue + oneHundredValue));
 
         System.out.println();

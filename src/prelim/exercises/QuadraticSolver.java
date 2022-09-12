@@ -35,6 +35,12 @@ Algorithm
 6. Compute root2: root2 = (-b - Math.sqrt(b*b - 4*a*c))/(2*a)
 7. Display the roots.
 */
+
+package prelim.exercises;
+
+import java.util.Scanner;
+import java.lang.Math;
+
 public class QuadraticSolver {
 
   public static void main(String[] args) {
@@ -43,20 +49,27 @@ public class QuadraticSolver {
     "\nof the form ax^2 +bx +c = 0.");
 
     System.out.print("Enter the coefficient of x^2 (a): ");
-    double a = Integer.parseInt(keyboard.nextLine());
+    double a = Double.parseDouble(keyboard.nextLine());
 
     System.out.print("Enter the coefficient of x (b): ");
-    double b = Integer.parseInt(keyboard.nextLine());
+    double b = Double.parseDouble(keyboard.nextLine());
 
     System.out.print("Enter the constant (c): ");
-    double c = Integer.parseInt(keyboard.nextLine());
+    double c = Double.parseDouble(keyboard.nextLine());
 
-    double discriminantSqrt = Math.sqrt(b * b - (4 * a * c))
+    double discriminant = b * b - (4 * a * c);
+    if (discriminant < 0){
+      System.out.println("\nThe expression given has no real roots.");
+      System.out.println("Exiting the program...");
+      System.exit(0);
+    }
+
+    double discriminantSqrt = Math.sqrt(discriminant);
     double root1 = (-b + discriminantSqrt) / (2 * a);
     double root2 = (-b - discriminantSqrt) / (2 * a);
 
-    System.out.printf("%c%.2f%s%.2f%s%.2f%s%.2f%s%.2f%c%n", '(', a, ") + (",
-    b, ") + (", c, ") = 0 are ", root1, " and ", root2, '.');
+    System.out.printf("\n%s%.2f%s%.2f%s%.2f%s%.2f%s%.2f%c%n", "a: ", a, ", b: ",
+    b, ", c: ", c, " has the roots ", root1, " and ", root2, '.');
     System.exit(0);
   
   }
