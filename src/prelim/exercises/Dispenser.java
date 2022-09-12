@@ -1,21 +1,25 @@
 /**
  * Name: Iori Z. Pimentel
- * Date: Sep 7, 2022
+ * Date: Sep 12, 2022
  * Activity Name and Number: Prelim Exercise Number 7
 
  -----------------------------------------------------------------
- Input: Length and Width
- Processes: Find the Perimeter and Area of Rectangle
+ Input: Amount to Withdraw using Scanner
+ Processes: Calculate the amounts of bills for each denomination of 1000, 500, 100 
  Display results
- Output: Perimeter, Area
+ Output: Amount and total for each bills. Total for all values.
  ------------------------------------------------------------------
  Algorithm:
- 1. Assign the length and width of the rectangle
- 2. Compute the perimeter : perimeter = 2 * (length + width)
- 3. Compute the area: area = length * width
- 4. Show the length and width of the rectangle
- 5. Show the perimeter of the rectangle
- 6. Show the area of the rectangle
+1. nThousand = toWithdraw / 1000;
+    toWithdraw %= 1000;
+2. nFiveHundred = toWithdraw / 500;
+    toWithdraw %= 500;
+3. nOneHundred = toWithdraw / 100;
+
+4. thousandValue = nThousand * 1000;
+5. fiveHundredValue = nFiveHundred * 500;
+6. oneHundredValue = nOneHundred * 100;
+
 
  -------------------------------------------------------------------
  */
@@ -33,32 +37,32 @@ public class Dispenser {
         int totalAmount = Integer.parseInt(keyboard.nextLine());
         int toWithdraw = totalAmount;
 
-        int thousandWithdrawn = toWithdraw / 1000;
+        int nThousand = toWithdraw / 1000;
         toWithdraw %= 1000;
 
-        int fiveHundredWithdrawn = toWithdraw / 500;
+        int nFiveHundred = toWithdraw / 500;
         toWithdraw %= 500;
 
-        int oneHundredWithdrawn = toWithdraw / 100;
+        int nOneHundred = toWithdraw / 100;
 
-        int thousandValue = thousandWithdrawn * 1000;
-        int fiveHundredValue = fiveHundredWithdrawn * 500;
-        int oneHundredValue = oneHundredWithdrawn * 100;
-
-        System.out.println();
-        System.out.println("$1000 given: " + thousandWithdrawn);
-        System.out.println("$500 given: " + fiveHundredWithdrawn);
-        System.out.println("$100 given: " + oneHundredWithdrawn);
-
-        String amountWithdrawn = "$" + thousandValue + " + $" + fiveHundredValue + " + $" + oneHundredValue;
-//        String reg = "\(^ [+] )|\";
-        amountWithdrawn = amountWithdrawn.replace(" + $0", "").replace("$0", "");
+        int thousandValue = nThousand * 1000;
+        int fiveHundredValue = nFiveHundred * 500;
+        int oneHundredValue = nOneHundred * 100;
 
         System.out.println();
-        System.out.println("Money given: " + amountWithdrawn);
+        System.out.println("$1000 given: " + nThousand);
+        System.out.println("$500 given: " + nFiveHundred);
+        System.out.println("$100 given: " + nOneHundred);
+
+        System.out.println();
+        System.out.println("$1000 total value: $" + thousandValue);
+        System.out.println("$500 total value: $" + fiveHundredValue);
+        System.out.println("$100 total value: $" + oneHundredValue);
+
+        System.out.println();
         System.out.println("Withdraw amount asked: $" + totalAmount);
         System.out.println("Withdraw amount given: $" + (thousandValue + fiveHundredValue + oneHundredValue));
 
-        System.out.println("\n\n");
+        System.out.println();
     }
 }
