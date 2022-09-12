@@ -1,7 +1,7 @@
 /**
  * Name: Iori Z. Pimentel
  * Date: Sep 12, 2022
- * Activity Name and Number: Prelim Exercise Number 7
+ * Activity Name and Number: Prelim Exercise Number 8
 ------------------------------------------------------------
 Problem:
 Write a program for determining the roots of a quadratic equation. A quadratic equation
@@ -53,7 +53,7 @@ public class QuadraticSolver {
 
     double discriminantSqrt = Math.sqrt(b * b - (4 * a * c))
     double root1 = (-b + discriminantSqrt) / (2 * a);
-    double root2 = (-b + discriminantSqrt) / (2 * a);
+    double root2 = (-b - discriminantSqrt) / (2 * a);
 
     System.out.printf("%c%.2f%s%.2f%s%.2f%s%.2f%s%.2f%c%n", '(', a, ") + (",
     b, ") + (", c, ") = 0 are ", root1, " and ", root2, '.');
