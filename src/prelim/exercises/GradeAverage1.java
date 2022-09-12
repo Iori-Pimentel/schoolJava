@@ -1,4 +1,4 @@
-/*
+/**
 Analysis:
 Input: 10 pairs of grades and units
 Processes:
@@ -34,34 +34,44 @@ import java.util.Scanner;
 public class GradeAverage1 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        int grade = 50;
+        int grade = 0;
         int units = 0;
         int totalGrade = 0;
         int totalUnits = 0;
-        double average = 0.0;
+        double avg = 0.0;
+        String postfix = "";
 
-        for (int i = 0; i < 10; i++) {
-            System.out.printf("Enter the grade of the student for the %dst subject: ", i);
+        for (int i = 1; i < 11; i++) {
+            switch (i) {
+                case 1:
+                   postfix = "st";
+                    break;
+                case 2:
+                   postfix = "nd";
+                    break;
+                case 3:
+                   postfix = "rd";
+                    break;
+                default:
+                    postfix = "th";
+            }
+            System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
             grade = Integer.parseInt(keyboard.nextLine());
 
-            System.out.print("Enter the number of units for the %dst subject: ", i);
+            System.out.printf("Enter the number of units for the %d%s subject: ", i, postfix);
             units = Integer.parseInt(keyboard.nextLine());
 
             totalGrade += grade * units;
-            totalUnits = totalUnits + units;
+            totalUnits += units;
         }
-//        Compute the average : (sum of products of grades and units)/total_units
-        double avg = totalGrade / totalUnits;
+        
+        avg = totalGrade / totalUnits;
         System.out.println("Your average is: " + avg);
 
         if (avg < 85) {
             System.out.println("Sorry! You did not make it to the dean's list. Do better next term.");
-            System.exit(0);
+        } else {
+            System.out.println("Congratulations! You belong to the dean's list.");
         }
-
-        System.out.println("Congratulations! You belong to the dean's list.");
-
-
-// continue code below...
     } // end of main
 } // end of class
