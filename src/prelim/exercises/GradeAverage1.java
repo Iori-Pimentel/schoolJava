@@ -1,4 +1,8 @@
 /**
+* Name: Iori Z. Pimentel
+* Date: Sep 14, 2022
+* Activity Name and Number: Prelim Exercise Number 9
+------------------------------------------------------------
 Analysis:
 Input: 10 pairs of grades and units
 Processes:
@@ -34,27 +38,21 @@ import java.util.Scanner;
 public class GradeAverage1 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        int grade = 0;
-        int units = 0;
+        int grade;
+        int units;
         int totalGrade = 0;
         int totalUnits = 0;
-        double avg = 0.0;
-        String postfix = "";
+        double avg;
+        String postfix;
 
         for (int i = 1; i < 11; i++) {
-            switch (i) {
-                case 1:
-                   postfix = "st";
-                    break;
-                case 2:
-                   postfix = "nd";
-                    break;
-                case 3:
-                   postfix = "rd";
-                    break;
-                default:
-                    postfix = "th";
-            }
+            postfix = switch (i) {
+                case 1 -> "st";
+                case 2 -> "nd";
+                case 3 -> "rd";
+                default -> "th";
+            };
+
             System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
             grade = Integer.parseInt(keyboard.nextLine());
 
@@ -65,8 +63,8 @@ public class GradeAverage1 {
             totalUnits += units;
         }
         
-        avg = totalGrade / totalUnits;
-        System.out.println("Your average is: " + avg);
+        avg = (double) totalGrade / totalUnits;
+        System.out.println("\nYour average is: " + avg);
 
         if (avg < 85) {
             System.out.println("Sorry! You did not make it to the dean's list. Do better next term.");
