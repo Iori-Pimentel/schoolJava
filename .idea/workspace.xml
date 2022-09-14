@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Sep 12 commit">
-      <change afterPath="$PROJECT_DIR$/src/prelim/exercises/EstimatedEducationalExpense.java" afterDir="false" />
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Sep 14 commit">
+      <change afterPath="$PROJECT_DIR$/src/prelim/exercises/EstimatedSavings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prelim/exercises/GradeAverage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prelim/exercises/GradeAverage1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,20 +51,7 @@
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EstimatedEducationalExpense">
-    <configuration name="DemoClassB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="demo.DemoClassB" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.EstimatedSavings">
     <configuration name="Dispenser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="prelim.exercises.Dispenser" />
       <module name="Pimentel2234663" />
@@ -81,6 +67,19 @@
     </configuration>
     <configuration name="EstimatedEducationalExpense" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="prelim.exercises.EstimatedEducationalExpense" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="prelim.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EstimatedSavings" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="prelim.exercises.EstimatedSavings" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -120,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EstimatedSavings" />
         <item itemvalue="Application.EstimatedEducationalExpense" />
         <item itemvalue="Application.GradeAverage1" />
         <item itemvalue="Application.Dispenser" />
         <item itemvalue="Application.prelim.exercises.QuadraticSolver" />
-        <item itemvalue="Application.DemoClassB" />
       </list>
     </recent_temporary>
   </component>
@@ -144,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662963925032</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Sep 14 commit">
+      <created>1663136098221</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663136098221</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +178,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Sep 12 commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sep 12 commit" />
+    <MESSAGE value="Sep 14 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sep 14 commit" />
   </component>
 </project>
