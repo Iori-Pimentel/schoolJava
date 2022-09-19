@@ -52,6 +52,9 @@ public class EstimatedSavings {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
+        System.out.print("\nHow much is your 6-day allowance? ");
+        int allowanceWeek = Integer.parseInt(keyboard.nextLine());
+
         System.out.print("\nHow much is your daily budget for transportation? ");
         int transportDay = Integer.parseInt(keyboard.nextLine());
 
@@ -64,16 +67,18 @@ public class EstimatedSavings {
         System.out.print("How much is your daily budget for cell phone load? ");
         int loadDay = Integer.parseInt(keyboard.nextLine());
 
-        int temp = 0;
+        int expensesDay =  transportDay + foodDay + hygieneDay + loadDay;
+        int expensesWeek = expensesDay * 6;
+        int savingsWeek = allowanceWeek - expensesWeek;
 
-        System.out.printf("\nEstimated Tuition Fee per Semester: %,d", temp);
-        System.out.printf("\nEstimated Board and Lodging cost per Semester: %,d", temp);
-        System.out.printf("\nEstimated living Allowance per Semester: %,d", temp);
+        int savingsSem = savingsWeek * 16;
+        int savingsEightSem = savingsSem * 8;
 
-        System.out.printf("\n\nEstimated Amount Needed by a Student for one Semester: %,d", temp);
-        System.out.printf("\nEstimated Amount Needed by a Student for one Short Term: %,.2f", temp);
-        System.out.printf("\nEstimated Amount Needed by a Student to graduate: %,.2f", temp);
-
+        System.out.printf("\nExpected Total Expenses for 6 days: %,d", expensesWeek);
+        System.out.printf("\nExpected Savings for 6 days: %,d", savingsWeek);
+        System.out.printf("\nExpected Savings for one semester: %,d", savingsSem);
+        System.out.printf("\nExpected Savings for eight semesters: %,d", savingsEightSem);
+        System.out.println();
     } // end of main
 } // end of class
 
