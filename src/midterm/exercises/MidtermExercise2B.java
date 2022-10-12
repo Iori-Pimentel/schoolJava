@@ -81,7 +81,7 @@ if (numericGrade >=90 && numericGrade <=100), let letterGrade= 'A'.
 // Incomplete Program
 package midterm.exercises;
 import java.util.Scanner;
-public class MidtermExercise2A {
+public class MidtermExercise2B {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int perfectTotalQuizScore = 0, totalQuizScore = 0, examScore = 0, perfectExamScore = 0;
@@ -95,7 +95,6 @@ public class MidtermExercise2A {
 
         System.out.print("Enter the perfect total quiz score: ");
         perfectTotalQuizScore = Integer.parseInt(keyboard.nextLine()); // 2
-
         if (perfectTotalQuizScore <= 0) {
             System.out.println("Invalid perfect score! The perfect score should be greater than zero");
             System.out.println("Sorry! The program needs to close. Run the program again and enter correct values.");
@@ -129,17 +128,14 @@ public class MidtermExercise2A {
         quizGrade = (double) totalQuizScore / perfectTotalQuizScore * 50 + 50;
         examGrade = (double) examScore / perfectExamScore * 50 + 50;
         numericGrade = (quizGrade + examGrade) / 2; // 7
-         
+
         if (numericGrade >= 50 && numericGrade < 75) {
             letterGrade = 'D';
-        } 
-        if (numericGrade >=75 && numericGrade <80) { // 8
+        } else if (numericGrade >=75 && numericGrade <80) { // 8
             letterGrade = 'C';
-        }
-        if (numericGrade >=80 && numericGrade <90) { // 9
+        } else if (numericGrade >=80 && numericGrade <90) { // 9
             letterGrade = 'B';
-        }
-        if  (numericGrade >=90 && numericGrade <=100){
+        } else {
             letterGrade = 'A'; //10
         }
 
