@@ -1,4 +1,4 @@
-/*
+/**
 * Name: Iori Z. Pimentel
 * Date: Oct 10, 2022
 * Activity Name and Number: Midterm Exercise Program 2A
@@ -78,7 +78,7 @@ if (numericGrade >=80 && numericGrade <90), let letterGrade= 'B'.
 if (numericGrade >=90 && numericGrade <=100), let letterGrade= 'A'.
 20. Display a summary of the result of the computation
 */
-// Incomplete Program
+
 package midterm.exercises;
 import java.util.Scanner;
 public class MidtermExercise2B {

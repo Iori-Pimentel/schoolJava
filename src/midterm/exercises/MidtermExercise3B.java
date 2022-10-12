@@ -1,7 +1,7 @@
-/*
+/**
 * Name: Iori Z. Pimentel
 * Date: Oct 10, 2022
-* Activity Name and Number: Midterm Exercise Program 3A
+* Activity Name and Number: Midterm Exercise Program 3B
 ------------------------------------------------------------
 Problem:
 Write a program for computing the amount of money in a bank account at the end of each quarter
@@ -45,6 +45,7 @@ Compute the interest earned for the fourth quarter
 Compute the new amount (amount at the end of the fourth quarter)
 Display the year, quarter, interest earned and balance at the end of 4th quarter
  */
+
 package midterm.exercises;
 import java.util.*;
 

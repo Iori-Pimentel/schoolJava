@@ -1,4 +1,4 @@
-/*
+/**
 * Name: Iori Z. Pimentel
 * Date: Oct 10, 2022
 * Activity Name and Number: Midterm Exercise Program 3A
@@ -45,6 +45,7 @@ Compute the interest earned for the fourth quarter
 Compute the new amount (amount at the end of the fourth quarter)
 Display the year, quarter, interest earned and balance at the end of 4th quarter
  */
+
 package midterm.exercises;
 import java.util.*;
 

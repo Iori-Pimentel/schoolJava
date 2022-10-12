@@ -45,7 +45,7 @@ public class GradeAverage1 {
         double avg;
         String postfix;
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i <= 10; i++) {
             postfix = switch (i) {
                 case 1 -> "st";
                 case 2 -> "nd";

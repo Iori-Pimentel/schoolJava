@@ -1,4 +1,4 @@
-/*
+/**
 * Name: Iori Z. Pimentel
 * Date: Oct 10, 2022
 * Activity Name and Number: Midterm Exercise Program 1A
@@ -62,6 +62,7 @@ Required:
 Complete the following Java program for the programming problem by replacing each blank line by the
 appropriate keyword, expression or statement.
 */
+
 package midterm.exercises;
 import java.lang.*;
 import java.util.Scanner;
