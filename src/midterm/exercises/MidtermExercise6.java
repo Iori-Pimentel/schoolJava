@@ -39,16 +39,16 @@ public class MidtermExercise6 {
         taxableIncome = keyboard.nextDouble();
         if (taxableIncome <= 25000.00)
             bracket = 1;
-        if (taxableIncome > 25000.00 && taxableIncome <= 125000.00)
+        else if (taxableIncome <= 125000.00)
             bracket = 2;
-        if (taxableIncome > 125000.00 && taxableIncome <= 525000.00)
+        else if (taxableIncome <= 525000.00)
             bracket = 3;
-        if (taxableIncome > 525000.00)
+        else
             bracket = 4;
+
         switch (bracket) {
             case 1:
                 taxDue = 4000.00;
-
                 break;
             case 2:
                 taxDue = 4000.00 + (taxableIncome - 25000.00) * 0.08;

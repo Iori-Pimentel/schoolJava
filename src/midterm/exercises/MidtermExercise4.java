@@ -13,7 +13,7 @@ values. The following should be imposed: (Filename: MidtermExercise4.java)
 ✓ The valid product names should be limited to only 5 product names ( e.g. “pen”, “pencil”, “short bond paper”, “long bond paper”, “pad paper”)
 ✓ The quantity cannot be a negative number.
 ✓ The unit price must be greater than zero
-✓ The discount rate cannot be negative and it cannot be more than 100 percent.
+✓ The discount rate cannot be negative, and it cannot be more than 100 percent.
 ✓ The amount tendered cannot be lower than the amount to be paid.
 If an input value is invalid, the user should be given an appropriate error message and a directive
 to enter another value. The user may repeatedly supply an invalid value. The processing should
@@ -27,7 +27,7 @@ public class MidtermExercise4 {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        String pName = "";
+        String pName;
         double uPrice, totalCost, discount, discountedCost, amountTendered, change;
         int qty, dRate;
 
@@ -62,7 +62,7 @@ public class MidtermExercise4 {
             System.out.print("Discount Rate: ");
             dRate = Integer.parseInt(keyboard.nextLine());
 
-            if (qty < 0 || qty > 100) {
+            if (dRate < 0 || dRate > 100) {
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
             } else break;
         }
