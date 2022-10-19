@@ -35,36 +35,36 @@ public class MidtermExercise4 {
             System.out.print("Product[pen|pencil|paper|notebook|eraser]: ");
             pName = keyboard.nextLine();
 
-            if (!pName.matches("(?i)pen|pencil|paper|notebook|eraser")) { // regex case-insensitive search
+            if (!pName.matches("(?i)pen|pencil|paper|notebook|eraser")) // regex case-insensitive search
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-            } else break;
+            else break;
         }
 
         while (true) {
             System.out.print("Quantity: ");
             qty = Integer.parseInt(keyboard.nextLine());
 
-            if (qty < 0) {
+            if (qty < 0)
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-            } else break;
+            else break;
         }
 
         while (true) {
             System.out.print("Unit Price: ");
             uPrice = Double.parseDouble(keyboard.nextLine());
 
-            if (uPrice < 0) {
+            if (uPrice < 0)
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-            } else break;
+            else break;
         }
 
         while (true) {
             System.out.print("Discount Rate: ");
             dRate = Integer.parseInt(keyboard.nextLine());
 
-            if (dRate < 0 || dRate > 100) {
+            if (dRate < 0 || dRate > 100)
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-            } else break;
+            else break;
         }
 
         totalCost = uPrice * qty;
@@ -75,9 +75,9 @@ public class MidtermExercise4 {
             System.out.print("Cash Tendered: ");
             amountTendered = Double.parseDouble(keyboard.nextLine());
 
-            if (amountTendered < discountedCost) {
+            if (amountTendered < discountedCost)
                 System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-            } else break;
+            else break;
         }
 
         change = amountTendered - discountedCost;

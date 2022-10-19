@@ -58,23 +58,29 @@ public class MidtermExercise7 {
             System.out.print("Enter the meter reading last month: ");
             previousReading = Integer.parseInt(keyboard.nextLine());
 
-            if (previousReading < 0) {
+            if (previousReading < 0)
                 System.out.println("The meter reading cannot me negative.");
-            } else break;
+            else break;
         }
         while (true) {
             System.out.print("Enter the meter reading this month: ");
             presentReading = Integer.parseInt(keyboard.nextLine());
 
-            if (presentReading < previousReading) {
+            if (presentReading < previousReading)
                 System.out.println("The meter reading cannot me less than the previous reading.");
-            } else break;
+            else break;
         }
 
         nCMUsed = presentReading - previousReading;
 
-        System.out.print("Enter the classification as a consumer: ");
-        cType = keyboard.nextLine().charAt(0);
+        while (true) {
+            System.out.print("Enter the classification as a consumer: ");
+            cType = keyboard.nextLine().toLowerCase().charAt(0);
+
+            if (!(cType == 'r' || cType == 'c'))
+                System.out.println("Invalid Value...");
+            else break;
+        }
 
         switch (cType) {
             case 'r':
@@ -89,10 +95,6 @@ public class MidtermExercise7 {
                     amountDue += (nCMUsed - minCMCommercial) * rateCommercial;
                 }
                 break;
-            default:
-                System.out.println("Wrong Value Inputted...");
-                System.out.println("Closing the program");
-                System.exit(1);
         }
 
         System.out.println();

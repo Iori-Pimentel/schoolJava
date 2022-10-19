@@ -33,12 +33,12 @@ public class MidtermExercise8 {
         c = Double.parseDouble(keyboard.nextLine());
         discriminant = b * b - 4 * a * c;
 
-        if (discriminant >= 0){
+        if (discriminant >= 0){ // Real Roots
             double sqrtDiscriminant = Math.sqrt(discriminant);
             root1 = (-b + sqrtDiscriminant) / (2 * a);
             root2 = (-b - sqrtDiscriminant) / (2 * a);
             System.out.println("The roots are: " + root1 + " and " + root2 + ".");
-        }else {
+        }else { // Imaginary Roots
             String root1String =  -b / (2 * a) + " + (square root of (" + (-1) * discriminant + ") * i) / " + (2 * a);
             String root2String = -b / (2 * a) + " - (square root of (" + (-1) * discriminant + ") * i) / " + (2 * a);
             System.out.println("The imaginary roots are: " + root1String + " and " + root2String + ".");
