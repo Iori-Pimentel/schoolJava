@@ -25,12 +25,14 @@ public class MidtermExercise8 {
         double a, b, c, root1, root2, discriminant;
         System.out.println("This program helps you solve for the roots of a Quadratic Equation.");
         System.out.println("You should enter the coefficients of the quadratic equation");
+
         System.out.print("Enter a: ");
         a = Double.parseDouble(keyboard.nextLine());
         System.out.print("Enter b: ");
         b = Double.parseDouble(keyboard.nextLine());
         System.out.print("Enter c: ");
         c = Double.parseDouble(keyboard.nextLine());
+
         discriminant = b * b - 4 * a * c;
 
         if (discriminant >= 0){ // Real Roots

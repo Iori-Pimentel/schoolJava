@@ -129,15 +129,14 @@ public class MidtermExercise2B {
         examGrade = (double) examScore / perfectExamScore * 50 + 50;
         numericGrade = (quizGrade + examGrade) / 2; // 7
 
-        if (numericGrade >= 50 && numericGrade < 75) {
+        if (numericGrade < 75)
             letterGrade = 'D';
-        } else if (numericGrade >=75 && numericGrade <80) { // 8
+        else if (numericGrade <80) // 8
             letterGrade = 'C';
-        } else if (numericGrade >=80 && numericGrade <90) { // 9
+        else if (numericGrade <90) // 9
             letterGrade = 'B';
-        } else {
+        else
             letterGrade = 'A'; //10
-        }
 
         System.out.println();
         System.out.printf("%-30s%20s%n", "Name of Student", studentName);

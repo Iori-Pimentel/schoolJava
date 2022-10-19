@@ -36,7 +36,7 @@ public class MidtermExercise6 {
         System.out.println("Income Tax Computation");
         while (true) {
             System.out.print("Enter the taxable income: ");
-            taxableIncome = keyboard.nextDouble();
+            taxableIncome = Double.parseDouble(keyboard.nextLine());
 
             if (taxableIncome < 0)
                 System.out.println("Value cannot be a negative value.");
