@@ -78,7 +78,7 @@ public class MidtermExercise7 {
             cType = keyboard.nextLine().toLowerCase().charAt(0);
 
             if (!(cType == 'r' || cType == 'c'))
-                System.out.println("Invalid Value...");
+                System.out.println("Invalid classification...");
             else break;
         }
 

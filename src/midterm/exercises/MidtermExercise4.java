@@ -36,7 +36,7 @@ public class MidtermExercise4 {
             pName = keyboard.nextLine();
 
             if (!pName.matches("(?i)pen|pencil|paper|notebook|eraser")) // regex case-insensitive search
-                System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+                System.out.println(ANSI_RED + "Invalid Value\nName does not match available products..." + ANSI_RESET);
             else break;
         }
 
@@ -45,7 +45,7 @@ public class MidtermExercise4 {
             qty = Integer.parseInt(keyboard.nextLine());
 
             if (qty < 0)
-                System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+                System.out.println(ANSI_RED + "Invalid Value\nQuantity cannot be negative..." + ANSI_RESET);
             else break;
         }
 
@@ -54,7 +54,7 @@ public class MidtermExercise4 {
             uPrice = Double.parseDouble(keyboard.nextLine());
 
             if (uPrice < 0)
-                System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+                System.out.println(ANSI_RED + "Invalid Value\nUnit Price cannot be negative..." + ANSI_RESET);
             else break;
         }
 
@@ -63,7 +63,7 @@ public class MidtermExercise4 {
             dRate = Integer.parseInt(keyboard.nextLine());
 
             if (dRate < 0 || dRate > 100)
-                System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+                System.out.println(ANSI_RED + "Invalid Value\nDiscount Rate should be between 0 and 100..." + ANSI_RESET);
             else break;
         }
 
@@ -76,7 +76,7 @@ public class MidtermExercise4 {
             amountTendered = Double.parseDouble(keyboard.nextLine());
 
             if (amountTendered < discountedCost)
-                System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+                System.out.println(ANSI_RED + "Invalid Value\nCash Tendered is not enough..." + ANSI_RESET);
             else break;
         }
 
