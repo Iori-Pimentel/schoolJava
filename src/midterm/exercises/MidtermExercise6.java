@@ -43,7 +43,7 @@ public class MidtermExercise6 {
             else break;
         }
 
-        if (taxableIncome <= 250_000.00)
+        if (taxableIncome <= 250_000)
             taxDue = 0;
         else if (taxableIncome <= 400_000)
             taxDue = 0.20 * (taxableIncome - 250_000);
