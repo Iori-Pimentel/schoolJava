@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Midterms Exercises Done">
-      <change afterPath="$PROJECT_DIR$/names.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/midterm/activities/ElectricBill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/midterm/samples/Contacts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/midterm/samples/FilePrintSample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/midterm/samples/names.txt" afterDir="false" />
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Oct 24 Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/midterm/activities/ElectricBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/activities/ElectricBill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise3B.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise3B.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +45,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "D:/Pimentel2234663",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -62,13 +62,13 @@
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ElectricBill">
-    <configuration name="ElectricBill" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.activities.ElectricBill" />
+  <component name="RunManager" selected="Application.FinalsExercise3">
+    <configuration name="FinalsExercise1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise1" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="midterm.activities.*" />
+          <option name="PATTERN" value="finals.exercises.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,8 +76,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MidtermExercise6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.exercises.MidtermExercise6" />
+    <configuration name="FinalsExercise2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise2" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalsExercise3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise3" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MidtermExercise3B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="midterm.exercises.MidtermExercise3B" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -89,8 +115,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="midterm.activities.Contacts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.activities.Contacts" />
+    <configuration name="MoneyInBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="midterm.activities.MoneyInBank" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -102,39 +128,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="midterm.sample.NameMaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.sample.NameMaker" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="midterm.samples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="midterm.samples.Contacts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.samples.Contacts" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="midterm.samples.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ElectricBill" />
-        <item itemvalue="Application.midterm.samples.Contacts" />
-        <item itemvalue="Application.midterm.sample.NameMaker" />
-        <item itemvalue="Application.midterm.activities.Contacts" />
-        <item itemvalue="Application.MidtermExercise6" />
+        <item itemvalue="Application.FinalsExercise3" />
+        <item itemvalue="Application.FinalsExercise2" />
+        <item itemvalue="Application.MoneyInBank" />
+        <item itemvalue="Application.MidtermExercise3B" />
+        <item itemvalue="Application.FinalsExercise1" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666159588447</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="temp commit">
+      <created>1666591843979</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666591843979</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -246,6 +253,7 @@
     <MESSAGE value="Exercises 3-5" />
     <MESSAGE value="Exercises 6-8" />
     <MESSAGE value="Midterms Exercises Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Midterms Exercises Done" />
+    <MESSAGE value="temp commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp commit" />
   </component>
 </project>

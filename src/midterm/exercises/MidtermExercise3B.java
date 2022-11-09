@@ -72,6 +72,7 @@ public class MidtermExercise3B {
         quarterlyRate = annualRate / 4; // item 4
         finalAmount = principal;
 
+        System.out.printf("%6s%8s%16s%30s%n", "Year", "Quarter", "Interest Earned", "Amount at end of quarter");
         for (quarter = 1; quarter <= 4; quarter++) {
           principal = finalAmount; // item 11
           interest = principal * quarterlyRate; // item 13

@@ -59,7 +59,7 @@ public class MidtermExercise7 {
             previousReading = Integer.parseInt(keyboard.nextLine());
 
             if (previousReading < 0)
-                System.out.println("The meter reading cannot me negative.");
+                System.out.println("The meter reading cannot be negative.");
             else break;
         }
         while (true) {
@@ -67,7 +67,7 @@ public class MidtermExercise7 {
             presentReading = Integer.parseInt(keyboard.nextLine());
 
             if (presentReading < previousReading)
-                System.out.println("The meter reading cannot me less than the previous reading.");
+                System.out.println("The meter reading cannot be less than the previous reading.");
             else break;
         }
 
