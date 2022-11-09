@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Oct 24 Commit">
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Test Commit">
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4C.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4E.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4F.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midterm/activities/ElectricBill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/activities/ElectricBill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise3B.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise3B.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/midterm/exercises/MidtermExercise7.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,14 +60,15 @@
       <recent name="D:\schoolJava\src\prelim\exercises" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="finals.exercises" />
       <recent name="midterm.exercises" />
       <recent name="prelim.activities" />
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FinalsExercise3">
-    <configuration name="FinalsExercise1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise1" />
+  <component name="RunManager" selected="Application.FinalsExercise4C">
+    <configuration name="FinalsExercise4A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4A" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -76,8 +80,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinalsExercise2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise2" />
+    <configuration name="FinalsExercise4B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4B" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -89,8 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinalsExercise3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise3" />
+    <configuration name="FinalsExercise4C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4C" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -102,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MidtermExercise3B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.exercises.MidtermExercise3B" />
+    <configuration name="FinalsExercise4E" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4E" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="midterm.exercises.*" />
+          <option name="PATTERN" value="finals.exercises.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,12 +119,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoneyInBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="midterm.activities.MoneyInBank" />
+    <configuration name="FinalsExercise4F" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4F" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="midterm.activities.*" />
+          <option name="PATTERN" value="finals.exercises.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FinalsExercise3" />
-        <item itemvalue="Application.FinalsExercise2" />
-        <item itemvalue="Application.MoneyInBank" />
-        <item itemvalue="Application.MidtermExercise3B" />
-        <item itemvalue="Application.FinalsExercise1" />
+        <item itemvalue="Application.FinalsExercise4C" />
+        <item itemvalue="Application.FinalsExercise4F" />
+        <item itemvalue="Application.FinalsExercise4E" />
+        <item itemvalue="Application.FinalsExercise4B" />
+        <item itemvalue="Application.FinalsExercise4A" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666591843979</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Test Commit">
+      <created>1667971008628</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667971008628</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,6 +265,7 @@
     <MESSAGE value="Exercises 6-8" />
     <MESSAGE value="Midterms Exercises Done" />
     <MESSAGE value="temp commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="temp commit" />
+    <MESSAGE value="Test Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Commit" />
   </component>
 </project>
