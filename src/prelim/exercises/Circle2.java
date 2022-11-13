@@ -22,23 +22,23 @@ package prelim.exercises;
 import static java.lang.Math.PI;
 
 public class Circle2 {
-    public static void main(String[] args) {
-        double area = 15;
-        double radius;
+  public static void main(String[] args) {
+    double area = 15;
+    double radius;
 
-        radius = Math.sqrt(area / PI);
+    radius = Math.sqrt(area / PI);
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n"+
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Area of circle is " + area + ".\n" +
-                        "\t|\t Radius of Circle is " + radius + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n"+
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Area of circle is " + area + ".\n" +
+      "\t|\t Radius of Circle is " + radius + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

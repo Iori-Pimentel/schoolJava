@@ -15,52 +15,52 @@ package finals.exercises;
 import java.util.Scanner;
 import java.lang.*;
 public class FinalsExercise1 {
-    // method that returns true if a number f is a factor of a number n
-    public static boolean isFactor(int f, int n) { // ITEM 1
-        if (n % f == 0) // n divided by f yields a 0 remainder
-            return true;
-        else
-            return false;
+  // method that returns true if a number f is a factor of a number n
+  public static boolean isFactor(int f, int n) { // ITEM 1
+    if (n % f == 0) // n divided by f yields a 0 remainder
+    return true;
+    else
+    return false;
+  }
+  // method that returns the sum of the factors that are less than n of an integer n
+  public static int sumFactors(int n) {
+    int sum = 0; // initialize sum of factors to 0
+    for (int x = 1; x < n; x++) {
+      if (isFactor(x, n)) // Invoke the isFactor method
+      sum = sum + x; // ITEM 2
     }
-    // method that returns the sum of the factors that are less than n of an integer n
-    public static int sumFactors(int n) {
-        int sum = 0; // initialize sum of factors to 0
-        for (int x = 1; x < n; x++) {
-            if (isFactor(x, n)) // Invoke the isFactor method
-                sum = sum + x; // ITEM 2
-        }
-        return sum;
-    }
-    // method that returns true if an integer n is a perfect number.
-    public static boolean isPerfect(int n) {
-        if (sumFactors(n) == n) // invoke sumFactors method
-            return true; // ITEM 3
-        else
-            return false;
-    }
-// method that reads and returns an integer in the range 1 to a specified limit
+    return sum;
+  }
+  // method that returns true if an integer n is a perfect number.
+  public static boolean isPerfect(int n) {
+    if (sumFactors(n) == n) // invoke sumFactors method
+    return true; // ITEM 3
+    else
+    return false;
+  }
+  // method that reads and returns an integer in the range 1 to a specified limit
 
-    static public int readNumber(int limit) {
-        Scanner keyboard = new Scanner(System.in);
-        int n;
-        do {
-            System.out.print("Input an integer between 1 and " + limit + " : ");
-            n = Integer.parseInt(keyboard.nextLine()); // ITEM 4
-            if (n < 1 || n >= limit) {
-                System.out.println("You did not enter a number between 1 and " + limit + ".");
-            }
-        } while (n < 1 || n >= limit); // ITEM 5
-        return n;
+  static public int readNumber(int limit) {
+    Scanner keyboard = new Scanner(System.in);
+    int n;
+    do {
+      System.out.print("Input an integer between 1 and " + limit + " : ");
+      n = Integer.parseInt(keyboard.nextLine()); // ITEM 4
+      if (n < 1 || n >= limit) {
+        System.out.println("You did not enter a number between 1 and " + limit + ".");
+      }
+    } while (n < 1 || n >= limit); // ITEM 5
+    return n;
+  }
+  // the main method reads and evaluate if a number is perfect
+  public static void main(String[] args) { // ITEM 6
+    Scanner keyboard = new Scanner(System.in);
+    int n = 0;
+    n = readNumber(32000);
+    if (isPerfect(n)) { // ITEM 7 invokes isPerfect method and pass n to it
+      System.out.println(n + " is a perfect number.");
+    } else {
+      System.out.println(n + " is not a perfect number.");
     }
-    // the main method reads and evaluate if a number is perfect
-    public static void main(String[] args) { // ITEM 6
-        Scanner keyboard = new Scanner(System.in);
-        int n = 0;
-        n = readNumber(32000);
-        if (isPerfect(n)) { // ITEM 7 invokes isPerfect method and pass n to it
-            System.out.println(n + " is a perfect number.");
-        } else {
-            System.out.println(n + " is not a perfect number.");
-        }
-    } // end of main method
+  } // end of main method
 } // end of class PerfectNumber

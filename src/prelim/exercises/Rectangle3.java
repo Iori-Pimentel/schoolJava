@@ -26,34 +26,34 @@ package prelim.exercises;
 import java.util.Scanner;
 
 public class Rectangle3 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        int length = 0, width = 0;
-        int perimeterOfRectangle, areaOfRectangle;
+    int length = 0, width = 0;
+    int perimeterOfRectangle, areaOfRectangle;
 
-        System.out.print("Type the value of the length: ");
-        length = Integer.parseInt(keyboard.nextLine());
+    System.out.print("Type the value of the length: ");
+    length = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("Type the value of the width: ");
-        width = Integer.parseInt(keyboard.nextLine());
+    System.out.print("Type the value of the width: ");
+    width = Integer.parseInt(keyboard.nextLine());
 
-        perimeterOfRectangle = 2 * (length + width);
-        areaOfRectangle = length * width;
+    perimeterOfRectangle = 2 * (length + width);
+    areaOfRectangle = length * width;
 
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n"+
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Length of rectangle is " + length + " and width of rectangle is " + width + ".\n" +
-                        "\t|\t Perimeter of rectangle is " + perimeterOfRectangle + ".\n" +
-                        "\t|\t Area of rectangle is " + areaOfRectangle + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n"+
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Length of rectangle is " + length + " and width of rectangle is " + width + ".\n" +
+      "\t|\t Perimeter of rectangle is " + perimeterOfRectangle + ".\n" +
+      "\t|\t Area of rectangle is " + areaOfRectangle + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

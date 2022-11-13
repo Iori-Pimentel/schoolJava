@@ -64,7 +64,7 @@ package midterm.exercises;
 import java.util.Scanner;
 
 public class GradeCalculator1 {
-    /**
+  /**
      1. Construct keyboard as an object of the Scanner class
      2. Declare and initialize rawScore and perfectScofre
      3. Declare and initialize grade
@@ -94,46 +94,46 @@ public class GradeCalculator1 {
         5.7. Repeat from  step 5
      6. Close the program
      * */
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("This program will let you compute a grade corresponding to a raw score ");
-        System.out.println("  based on the formula grade = rawScore/perfectScore*50 + 50. ");
-        System.out.println("  You will be asked to enter the perfect score and the raw score.");
-        int rawScore=0;
-        int perfectScore=0;
-        int grade=50;
-        boolean computeAgain = true;
-        while (computeAgain){
-            do {
-                System.out.print("Enter the perfect score: ");
-                perfectScore = Integer.parseInt(keyboard.nextLine());
-                if (perfectScore <= 0){
-                    System.out.println("The perfect score should be greater than 0");
-                }
-            } while (perfectScore <= 0);
-            do {
-              System.out.print("Enter the raw score: ");
-              rawScore = Integer.parseInt(keyboard.nextLine());
-              if (rawScore < 0)
-                System.out.println("The raw score should be greater than 0");
-              if (rawScore > perfectScore)
-                System.out.println("The raw score should be less than the perfect score");
-            } while (rawScore < 0 || rawScore > perfectScore);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("This program will let you compute a grade corresponding to a raw score ");
+    System.out.println("  based on the formula grade = rawScore/perfectScore*50 + 50. ");
+    System.out.println("  You will be asked to enter the perfect score and the raw score.");
+    int rawScore=0;
+    int perfectScore=0;
+    int grade=50;
+    boolean computeAgain = true;
+    while (computeAgain){
+      do {
+        System.out.print("Enter the perfect score: ");
+        perfectScore = Integer.parseInt(keyboard.nextLine());
+        if (perfectScore <= 0){
+          System.out.println("The perfect score should be greater than 0");
+        }
+      } while (perfectScore <= 0);
+      do {
+        System.out.print("Enter the raw score: ");
+        rawScore = Integer.parseInt(keyboard.nextLine());
+        if (rawScore < 0)
+        System.out.println("The raw score should be greater than 0");
+        if (rawScore > perfectScore)
+        System.out.println("The raw score should be less than the perfect score");
+      } while (rawScore < 0 || rawScore > perfectScore);
 
-            grade = (int) ((double) rawScore/ (double) perfectScore*50 +50);
+      grade = (int) ((double) rawScore/ (double) perfectScore*50 +50);
 
-            System.out.println("The calculated grade is " + grade);
+      System.out.println("The calculated grade is " + grade);
 
-            System.out.println("\nDo you want to compute again<Yes/No>?");
-            String answer = keyboard.nextLine();
-            if (answer.charAt(0)== 'Y' || answer.charAt(0) == 'y'){
-                computeAgain = true;
-            } else {
-                computeAgain = false;
-            }
-        } // end of while
+      System.out.println("\nDo you want to compute again<Yes/No>?");
+      String answer = keyboard.nextLine();
+      if (answer.charAt(0)== 'Y' || answer.charAt(0) == 'y'){
+        computeAgain = true;
+      } else {
+        computeAgain = false;
+      }
+    } // end of while
 
-    }  // end of main method
+  }  // end of main method
 
 
 }  // end of class

@@ -54,27 +54,27 @@ import java.util.Scanner;
 import java.io.*;
 
 public class Contacts {
-    public static void main(String[] args) {
-        String name="";
-        String address="";
-        String number="";
-        Scanner fileReader=null;
-        System.out.printf("%-20s%-25s%-15s%n","Name","Address","Number");
+  public static void main(String[] args) {
+    String name="";
+    String address="";
+    String number="";
+    Scanner fileReader=null;
+    System.out.printf("%-20s%-25s%-15s%n","Name","Address","Number");
 
-        try {
-            fileReader = new Scanner(new File("names.txt"));
-            while ( fileReader.hasNext()){
-                name = fileReader.nextLine();
-                address = fileReader.nextLine();
-                number = fileReader.nextLine();
-                System.out.printf("%-20s%-25s%-15s%n",name,address,number);
-            }
-        } catch (Exception ex){
-            System.out.println("File does not exist");
-            ex.printStackTrace();
-        }
-        fileReader.close();  /*Note: After using an opened file
+    try {
+      fileReader = new Scanner(new File("names.txt"));
+      while ( fileReader.hasNext()){
+        name = fileReader.nextLine();
+        address = fileReader.nextLine();
+        number = fileReader.nextLine();
+        System.out.printf("%-20s%-25s%-15s%n",name,address,number);
+      }
+    } catch (Exception ex){
+      System.out.println("File does not exist");
+      ex.printStackTrace();
+    }
+    fileReader.close();  /*Note: After using an opened file
                                 it is important to close the file.*/
-        System.exit(0);
-    }  // end of main method
+    System.exit(0);
+  }  // end of main method
 }

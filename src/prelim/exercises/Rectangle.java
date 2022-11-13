@@ -24,25 +24,25 @@ package prelim.exercises;
 
 
 public class Rectangle {
-    public static void main(String[] args) {
-        int length = 15, width = 10;
-        int perimeterOfRectangle, areaOfRectangle;
+  public static void main(String[] args) {
+    int length = 15, width = 10;
+    int perimeterOfRectangle, areaOfRectangle;
 
-        perimeterOfRectangle = 2 * (length + width);
-        areaOfRectangle = length * width;
+    perimeterOfRectangle = 2 * (length + width);
+    areaOfRectangle = length * width;
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n"+
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Length of rectangle is " + length + " and width of rectangle is " + width + ".\n" +
-                        "\t|\t Perimeter of rectangle is " + perimeterOfRectangle + ".\n" +
-                        "\t|\t Area of rectangle is " + areaOfRectangle + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n"+
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Length of rectangle is " + length + " and width of rectangle is " + width + ".\n" +
+      "\t|\t Perimeter of rectangle is " + perimeterOfRectangle + ".\n" +
+      "\t|\t Area of rectangle is " + areaOfRectangle + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

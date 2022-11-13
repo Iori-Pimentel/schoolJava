@@ -18,24 +18,24 @@
 package prelim.exercises;
 
 public class RightTriangle2 {
-    public static void main(String[] args) {
-        int base = 3, height = 4;
+  public static void main(String[] args) {
+    int base = 3, height = 4;
 
-        double hypotenuse;
+    double hypotenuse;
 
-        hypotenuse = Math.sqrt(base * base + height * height);
+    hypotenuse = Math.sqrt(base * base + height * height);
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Base of triangle is " + base + " and height of triangle is " + height + ".\n" +
-                        "\t|\t Hypotenuse of triangle is " + hypotenuse + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Base of triangle is " + base + " and height of triangle is " + height + ".\n" +
+      "\t|\t Hypotenuse of triangle is " + hypotenuse + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

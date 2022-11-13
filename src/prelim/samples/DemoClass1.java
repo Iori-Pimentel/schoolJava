@@ -26,9 +26,9 @@ import com.sun.jdi.Value;
 import java.util.Scanner;
 
 public class DemoClass1 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("""
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("""
                 \nThis program will compute the value of base raised to exponent \
                 where exponent is a small integer.
                 You will be asked to enter the value of base and the exponent.\n""");
@@ -36,18 +36,18 @@ public class DemoClass1 {
 
 
         System.out.print("Enter the value of base: ");
-        int base = Integer.parseInt(keyboard.nextLine());
+    int base = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("Enter the value of exponent which must be a small integer: ");
-        int exponent = Integer.parseInt(keyboard.nextLine());
+    System.out.print("Enter the value of exponent which must be a small integer: ");
+    int exponent = Integer.parseInt(keyboard.nextLine());
 
-        int valueOfPower = 1;
-        for (int i = 0; i < exponent; i++) {
-            valueOfPower *= base;
-        }
-
-        System.out.printf("The value of %d raised to %d is %,d.\n", base, exponent, valueOfPower);
-
-        System.exit(0);
+    int valueOfPower = 1;
+    for (int i = 0; i < exponent; i++) {
+      valueOfPower *= base;
     }
+
+    System.out.printf("The value of %d raised to %d is %,d.\n", base, exponent, valueOfPower);
+
+    System.exit(0);
+  }
 }

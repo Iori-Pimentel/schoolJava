@@ -30,30 +30,30 @@ import static java.lang.Math.PI;
 import java.util.Scanner;
 
 public class Circle3 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        int radius = 0;
-        double circumference, areaOfCircle;
+    int radius = 0;
+    double circumference, areaOfCircle;
 
-        System.out.print("Type the value of the radius: ");
-        radius = Integer.parseInt(keyboard.nextLine());
+    System.out.print("Type the value of the radius: ");
+    radius = Integer.parseInt(keyboard.nextLine());
 
-        circumference = 2 * PI * radius;
-        areaOfCircle = PI * radius * radius;
+    circumference = 2 * PI * radius;
+    areaOfCircle = PI * radius * radius;
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n"+
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Radius of circle is " + radius + ".\n" +
-                        "\t|\t Circumference of circle is " + circumference + ".\n" +
-                        "\t|\t Area of circle is " + areaOfCircle + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n"+
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Radius of circle is " + radius + ".\n" +
+      "\t|\t Circumference of circle is " + circumference + ".\n" +
+      "\t|\t Area of circle is " + areaOfCircle + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

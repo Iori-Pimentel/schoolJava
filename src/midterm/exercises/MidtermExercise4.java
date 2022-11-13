@@ -24,72 +24,72 @@ package midterm.exercises;
 import java.util.Scanner;
 import java.lang.*;
 public class MidtermExercise4 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        String pName;
-        double uPrice, totalCost, discount, discountedCost, amountTendered, change;
-        int qty, dRate;
+    String pName;
+    double uPrice, totalCost, discount, discountedCost, amountTendered, change;
+    int qty, dRate;
 
-        while (true) {
-            System.out.print("Product[pen|pencil|paper|notebook|eraser]: ");
-            pName = keyboard.nextLine();
+    while (true) {
+      System.out.print("Product[pen|pencil|paper|notebook|eraser]: ");
+      pName = keyboard.nextLine();
 
-            if (!pName.matches("(?i)pen|pencil|paper|notebook|eraser")) // regex case-insensitive search
-                System.out.println(ANSI_RED + "Invalid Value\nName does not match available products..." + ANSI_RESET);
-            else break;
-        }
+      if (!pName.matches("(?i)pen|pencil|paper|notebook|eraser")) // regex case-insensitive search
+      System.out.println(ANSI_RED + "Invalid Value\nName does not match available products..." + ANSI_RESET);
+      else break;
+    }
 
-        while (true) {
-            System.out.print("Quantity: ");
-            qty = Integer.parseInt(keyboard.nextLine());
+    while (true) {
+      System.out.print("Quantity: ");
+      qty = Integer.parseInt(keyboard.nextLine());
 
-            if (qty < 0)
-                System.out.println(ANSI_RED + "Invalid Value\nQuantity cannot be negative..." + ANSI_RESET);
-            else break;
-        }
+      if (qty < 0)
+      System.out.println(ANSI_RED + "Invalid Value\nQuantity cannot be negative..." + ANSI_RESET);
+      else break;
+    }
 
-        while (true) {
-            System.out.print("Unit Price: ");
-            uPrice = Double.parseDouble(keyboard.nextLine());
+    while (true) {
+      System.out.print("Unit Price: ");
+      uPrice = Double.parseDouble(keyboard.nextLine());
 
-            if (uPrice < 0)
-                System.out.println(ANSI_RED + "Invalid Value\nUnit Price cannot be negative..." + ANSI_RESET);
-            else break;
-        }
+      if (uPrice < 0)
+      System.out.println(ANSI_RED + "Invalid Value\nUnit Price cannot be negative..." + ANSI_RESET);
+      else break;
+    }
 
-        while (true) {
-            System.out.print("Discount Rate: ");
-            dRate = Integer.parseInt(keyboard.nextLine());
+    while (true) {
+      System.out.print("Discount Rate: ");
+      dRate = Integer.parseInt(keyboard.nextLine());
 
-            if (dRate < 0 || dRate > 100)
-                System.out.println(ANSI_RED + "Invalid Value\nDiscount Rate should be between 0 and 100..." + ANSI_RESET);
-            else break;
-        }
+      if (dRate < 0 || dRate > 100)
+      System.out.println(ANSI_RED + "Invalid Value\nDiscount Rate should be between 0 and 100..." + ANSI_RESET);
+      else break;
+    }
 
-        totalCost = uPrice * qty;
-        discount = totalCost * (dRate / 100.0);
-        discountedCost = totalCost - discount;
+    totalCost = uPrice * qty;
+    discount = totalCost * (dRate / 100.0);
+    discountedCost = totalCost - discount;
 
-        while (true) {
-            System.out.print("Cash Tendered: ");
-            amountTendered = Double.parseDouble(keyboard.nextLine());
+    while (true) {
+      System.out.print("Cash Tendered: ");
+      amountTendered = Double.parseDouble(keyboard.nextLine());
 
-            if (amountTendered < discountedCost)
-                System.out.println(ANSI_RED + "Invalid Value\nCash Tendered is not enough..." + ANSI_RESET);
-            else break;
-        }
+      if (amountTendered < discountedCost)
+      System.out.println(ANSI_RED + "Invalid Value\nCash Tendered is not enough..." + ANSI_RESET);
+      else break;
+    }
 
-        change = amountTendered - discountedCost;
+    change = amountTendered - discountedCost;
 
-        System.out.printf("%-25s%12s%n", "----------------------", "--------------");
-        System.out.printf("%-25s%12.2f%n", "Total Purchase Amount: ", totalCost);
-        System.out.printf("%-25s%12.2f%n", "Total Discount: ", discount);
-        System.out.printf("%-25s%12.2f%n", "Amount to be Paid: ", discountedCost);
-        System.out.printf("%-25s%12.2f%n", "Change: ", change);
-        System.exit(0);
-    } // end of main method
+    System.out.printf("%-25s%12s%n", "----------------------", "--------------");
+    System.out.printf("%-25s%12.2f%n", "Total Purchase Amount: ", totalCost);
+    System.out.printf("%-25s%12.2f%n", "Total Discount: ", discount);
+    System.out.printf("%-25s%12.2f%n", "Amount to be Paid: ", discountedCost);
+    System.out.printf("%-25s%12.2f%n", "Change: ", change);
+    System.exit(0);
+  } // end of main method
 
-    public static final String ANSI_RESET = "\u001B[0m"; // reset text color
-    public static final String ANSI_RED = "\u001B[31m"; // red color
+  public static final String ANSI_RESET = "\u001B[0m"; // reset text color
+  public static final String ANSI_RED = "\u001B[31m"; // red color
 } // end of class

@@ -22,20 +22,20 @@ import javax.swing.*;
 import java.util.Scanner;
 
 public class GradesGUI {
-    public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Program to calculate score average");
+  public static void main(String[] args) {
+    JOptionPane.showMessageDialog(null, "Program to calculate score average");
 
-        double firstGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your first grade? "));
-        double secondGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your second grade? "));
-        double thirdGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your third grade? "));
+    double firstGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your first grade? "));
+    double secondGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your second grade? "));
+    double thirdGrade = Double.parseDouble(JOptionPane.showInputDialog("What is your third grade? "));
 
-        double avg = (firstGrade + secondGrade + thirdGrade) / 3;
+    double avg = (firstGrade + secondGrade + thirdGrade) / 3;
 
-        JOptionPane.showMessageDialog(null, String.format("Your grade average is %.2f\n", avg));
+    JOptionPane.showMessageDialog(null, String.format("Your grade average is %.2f\n", avg));
 
-        if (avg < 75)
-            JOptionPane.showMessageDialog(null, ":-(");
-        else
-            JOptionPane.showMessageDialog(null, "Good Job");
-    }
+    if (avg < 75)
+    JOptionPane.showMessageDialog(null, ":-(");
+    else
+    JOptionPane.showMessageDialog(null, "Good Job");
+  }
 }

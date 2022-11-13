@@ -41,45 +41,45 @@ package prelim.exercises;
 import java.util.Scanner;
 import java.lang.*;
 public class TemperatureConverter {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        double celsius; // to hold temperature in degrees celsius
-        double fahrenheit; // to hold temperature in degrees fahrenheit
-        char choice;
-        double convertedValue;
+    double celsius; // to hold temperature in degrees celsius
+    double fahrenheit; // to hold temperature in degrees fahrenheit
+    char choice;
+    double convertedValue;
 
-        System.out.println("\nThis program helps you convert temperature measures.");
-        System.out.println("----------------Menu----------------------");
-        System.out.println("a: Convert from Fahrenheit to Celsius");
-        System.out.println("b: Convert from celsius to Fahrenheit");
-        System.out.println("c: Quit");
+    System.out.println("\nThis program helps you convert temperature measures.");
+    System.out.println("----------------Menu----------------------");
+    System.out.println("a: Convert from Fahrenheit to Celsius");
+    System.out.println("b: Convert from celsius to Fahrenheit");
+    System.out.println("c: Quit");
 
-        System.out.println("----------------Menu----------------------\n");
-        System.out.print("Enter your choice <a/b/c>: ");
-        choice = keyboard.nextLine().charAt(0);
+    System.out.println("----------------Menu----------------------\n");
+    System.out.print("Enter your choice <a/b/c>: ");
+    choice = keyboard.nextLine().charAt(0);
 
-        if (choice == 'a') {
-            System.out.print("Enter the temperature in Fahrenheit: ");
-            fahrenheit = Float.parseFloat(keyboard.nextLine());
-            celsius = 5.0/9.0*(fahrenheit-32);
-            System.out.println(fahrenheit + " degrees Fahrenheit equals " +
-                celsius + " degrees Celsius ");
-        } else if (choice == 'b') {
-            System.out.print("Enter the temperature in celsius: ");
-            celsius = Float.parseFloat(keyboard.nextLine());
-            fahrenheit = 9.0/5.0*celsius+32;
-            System.out.println(celsius + " degrees celsius equals " +
-                fahrenheit + " degrees farenheit.");
-        } else if (choice == 'c') {
-            System.out.println("Quitting the program...");
-        } else {
-            System.out.println("Your choice is not valid.");
-        }
+    if (choice == 'a') {
+      System.out.print("Enter the temperature in Fahrenheit: ");
+      fahrenheit = Float.parseFloat(keyboard.nextLine());
+      celsius = 5.0/9.0*(fahrenheit-32);
+      System.out.println(fahrenheit + " degrees Fahrenheit equals " +
+        celsius + " degrees Celsius ");
+    } else if (choice == 'b') {
+      System.out.print("Enter the temperature in celsius: ");
+      celsius = Float.parseFloat(keyboard.nextLine());
+      fahrenheit = 9.0/5.0*celsius+32;
+      System.out.println(celsius + " degrees celsius equals " +
+        fahrenheit + " degrees farenheit.");
+    } else if (choice == 'c') {
+      System.out.println("Quitting the program...");
+    } else {
+      System.out.println("Your choice is not valid.");
+    }
 
-        System.out.println("Thank you.");
-        System.exit(0);
-    } // End of main
+    System.out.println("Thank you.");
+    System.exit(0);
+  } // End of main
 } // End of class
 
 

@@ -25,25 +25,25 @@ package prelim.exercises;
 import static java.lang.Math.PI;
 
 public class Circle {
-    public static void main(String[] args) {
-        int radius = 15;
-        double circumference, areaOfCircle;
+  public static void main(String[] args) {
+    int radius = 15;
+    double circumference, areaOfCircle;
 
-        circumference = 2 * PI * radius;
-        areaOfCircle = PI * radius * radius;
+    circumference = 2 * PI * radius;
+    areaOfCircle = PI * radius * radius;
 
-        System.out.print(
-                "\n\n" +
-                        "\t*********************************************************\n"+
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t|\t Radius of circle is " + radius + ".\n" +
-                        "\t|\t Circumference of circle is " + circumference + ".\n" +
-                        "\t|\t Area of circle is " + areaOfCircle + ".\n" +
-                        "\t|\n" +
-                        "\t|\n" +
-                        "\t*********************************************************"
-        );
-        System.exit(0);
-    }
+    System.out.print(
+      "\n\n" +
+      "\t*********************************************************\n"+
+      "\t|\n" +
+      "\t|\n" +
+      "\t|\t Radius of circle is " + radius + ".\n" +
+      "\t|\t Circumference of circle is " + circumference + ".\n" +
+      "\t|\t Area of circle is " + areaOfCircle + ".\n" +
+      "\t|\n" +
+      "\t|\n" +
+      "\t*********************************************************"
+    );
+    System.exit(0);
+  }
 }

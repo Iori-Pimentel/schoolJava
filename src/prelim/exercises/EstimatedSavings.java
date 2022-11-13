@@ -49,36 +49,36 @@ package prelim.exercises;
 import java.util.Scanner;
 
 public class EstimatedSavings {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("\nHow much is your 6-day allowance? ");
-        int allowanceWeek = Integer.parseInt(keyboard.nextLine());
+    System.out.print("\nHow much is your 6-day allowance? ");
+    int allowanceWeek = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("\nHow much is your daily budget for transportation? ");
-        int transportDay = Integer.parseInt(keyboard.nextLine());
+    System.out.print("\nHow much is your daily budget for transportation? ");
+    int transportDay = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("How much is your daily budget for food? ");
-        int foodDay = Integer.parseInt(keyboard.nextLine());
+    System.out.print("How much is your daily budget for food? ");
+    int foodDay = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("How much is your daily budget for personal hygiene? ");
-        int hygieneDay = Integer.parseInt(keyboard.nextLine());
+    System.out.print("How much is your daily budget for personal hygiene? ");
+    int hygieneDay = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("How much is your daily budget for cell phone load? ");
-        int loadDay = Integer.parseInt(keyboard.nextLine());
+    System.out.print("How much is your daily budget for cell phone load? ");
+    int loadDay = Integer.parseInt(keyboard.nextLine());
 
-        int expensesDay =  transportDay + foodDay + hygieneDay + loadDay;
-        int expensesWeek = expensesDay * 6;
-        int savingsWeek = allowanceWeek - expensesWeek;
+    int expensesDay =  transportDay + foodDay + hygieneDay + loadDay;
+    int expensesWeek = expensesDay * 6;
+    int savingsWeek = allowanceWeek - expensesWeek;
 
-        int savingsSem = savingsWeek * 16;
-        int savingsEightSem = savingsSem * 8;
+    int savingsSem = savingsWeek * 16;
+    int savingsEightSem = savingsSem * 8;
 
-        System.out.printf("\nExpected Total Expenses for 6 days: %,d", expensesWeek);
-        System.out.printf("\nExpected Savings for 6 days: %,d", savingsWeek);
-        System.out.printf("\nExpected Savings for one semester: %,d", savingsSem);
-        System.out.printf("\nExpected Savings for eight semesters: %,d", savingsEightSem);
-        System.out.println();
-    } // end of main
+    System.out.printf("\nExpected Total Expenses for 6 days: %,d", expensesWeek);
+    System.out.printf("\nExpected Savings for 6 days: %,d", savingsWeek);
+    System.out.printf("\nExpected Savings for one semester: %,d", savingsSem);
+    System.out.printf("\nExpected Savings for eight semesters: %,d", savingsEightSem);
+    System.out.println();
+  } // end of main
 } // end of class
 

@@ -39,47 +39,47 @@ import javax.swing.*;
 import java.util.StringTokenizer;
 
 public class DemoClassB {
-    public static void main(String[] args) {
-        boolean validAmount = false;
-        String stringToDisplay = "", inputString = "";
-        int amount = 0, nFiveHundreds = 0, nOneHundreds = 0;
+  public static void main(String[] args) {
+    boolean validAmount = false;
+    String stringToDisplay = "", inputString = "";
+    int amount = 0, nFiveHundreds = 0, nOneHundreds = 0;
 
-        JOptionPane.showMessageDialog(null, "Demo Test for Multiples of 100s.");
+    JOptionPane.showMessageDialog(null, "Demo Test for Multiples of 100s.");
 
-        while (!validAmount){
-            try {
-                inputString = JOptionPane.showInputDialog("Enter an amount: ");
-                amount = Integer.parseInt(inputString);
+    while (!validAmount){
+      try {
+        inputString = JOptionPane.showInputDialog("Enter an amount: ");
+        amount = Integer.parseInt(inputString);
 
-                if (amount < 0){
-                    JOptionPane.showMessageDialog(null, "The amount should be positive.");
-                    continue;
-                }
-                if (amount % 100 != 0) {
-                    JOptionPane.showMessageDialog(null, "The amount is not a multiple of 100. ");
-                    continue;
-                }
-                validAmount = true;
-            } catch (Exception exception){
-                JOptionPane.showMessageDialog(null, "The amount is invalid.");
-            }
-        } // end of while
+        if (amount < 0){
+          JOptionPane.showMessageDialog(null, "The amount should be positive.");
+          continue;
+        }
+        if (amount % 100 != 0) {
+          JOptionPane.showMessageDialog(null, "The amount is not a multiple of 100. ");
+          continue;
+        }
+        validAmount = true;
+      } catch (Exception exception){
+        JOptionPane.showMessageDialog(null, "The amount is invalid.");
+      }
+    } // end of while
 
-        stringToDisplay = stringToDisplay + "Results\n\n";
-        stringToDisplay = stringToDisplay + "Amount to be given = " + amount + "\n";
-        nFiveHundreds = amount / 500;
-        stringToDisplay = stringToDisplay + "No. of Five Hundreds = " + nFiveHundreds + "\n";
-        amount %= 500;
-        nOneHundreds = amount / 100;
-        stringToDisplay = stringToDisplay + "No. of One Hundreds = " + nOneHundreds + "\n";
+    stringToDisplay = stringToDisplay + "Results\n\n";
+    stringToDisplay = stringToDisplay + "Amount to be given = " + amount + "\n";
+    nFiveHundreds = amount / 500;
+    stringToDisplay = stringToDisplay + "No. of Five Hundreds = " + nFiveHundreds + "\n";
+    amount %= 500;
+    nOneHundreds = amount / 100;
+    stringToDisplay = stringToDisplay + "No. of One Hundreds = " + nOneHundreds + "\n";
 
-        JOptionPane.showMessageDialog(null, stringToDisplay);
+    JOptionPane.showMessageDialog(null, stringToDisplay);
 
-        stringToDisplay = "Done..\n\n Exiting...";
-        JOptionPane.showMessageDialog(null, stringToDisplay);
+    stringToDisplay = "Done..\n\n Exiting...";
+    JOptionPane.showMessageDialog(null, stringToDisplay);
 
-        System.exit(0);
+    System.exit(0);
 
-    }
+  }
 
 }

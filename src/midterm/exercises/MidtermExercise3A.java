@@ -50,44 +50,44 @@ package midterm.exercises;
 import java.util.*;
 
 public class MidtermExercise3A {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        float annualRate;
-        float quarterlyRate;
-        double principal;
-        double interest;
-        double finalAmount;
-        byte quarter;
-        int year;
-        annualRate = 0.05F; // set annual interest to 5%
-        System.out.print("Enter the year: ");
-        year = Integer.parseInt(keyboard.nextLine()); // item 1
-        System.out.print("Enter the initial principal: ");
-        principal = Double.parseDouble(keyboard.nextLine()); // item 2
-        System.out.printf("%s%.2f%n", "Principal = ", principal); // item 3
-        System.out.printf("%s%.2f%c%n", "Interest Rate = ", annualRate * 100, '%');
-        System.out.printf("%6s%8s%16s%30s%n", "Year", "Quarter", "Interest Earned", "Amount at end of quarter");
-        quarterlyRate = annualRate / 4; // item 4
-        quarter = 1;
-        interest = principal * quarterlyRate ; // item 5
-        finalAmount = principal + interest;
-        System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
-        principal = finalAmount;
-        quarter = 2; // item 6
-        interest = principal * quarterlyRate; // item 7
-        finalAmount = principal + interest;
-        System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
-        principal = finalAmount;
-        quarter = 3; // item 8
-        interest = principal * quarterlyRate; // item 9
-        finalAmount = principal + interest; // item 10
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    float annualRate;
+    float quarterlyRate;
+    double principal;
+    double interest;
+    double finalAmount;
+    byte quarter;
+    int year;
+    annualRate = 0.05F; // set annual interest to 5%
+    System.out.print("Enter the year: ");
+    year = Integer.parseInt(keyboard.nextLine()); // item 1
+    System.out.print("Enter the initial principal: ");
+    principal = Double.parseDouble(keyboard.nextLine()); // item 2
+    System.out.printf("%s%.2f%n", "Principal = ", principal); // item 3
+    System.out.printf("%s%.2f%c%n", "Interest Rate = ", annualRate * 100, '%');
+    System.out.printf("%6s%8s%16s%30s%n", "Year", "Quarter", "Interest Earned", "Amount at end of quarter");
+    quarterlyRate = annualRate / 4; // item 4
+    quarter = 1;
+    interest = principal * quarterlyRate ; // item 5
+    finalAmount = principal + interest;
+    System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
+    principal = finalAmount;
+    quarter = 2; // item 6
+    interest = principal * quarterlyRate; // item 7
+    finalAmount = principal + interest;
+    System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
+    principal = finalAmount;
+    quarter = 3; // item 8
+    interest = principal * quarterlyRate; // item 9
+    finalAmount = principal + interest; // item 10
 
-        System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
-        principal = finalAmount; // item 11
-        quarter = 4; // item 12
-        interest = principal * quarterlyRate; // item 13
-        finalAmount = principal + interest; // item 14
-        System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
-        System.exit(0);
-    } // end of the main method
+    System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
+    principal = finalAmount; // item 11
+    quarter = 4; // item 12
+    interest = principal * quarterlyRate; // item 13
+    finalAmount = principal + interest; // item 14
+    System.out.printf("%6s%8d%16.2f%30.2f%n", year, quarter, interest, finalAmount);
+    System.exit(0);
+  } // end of the main method
 } // end of the class

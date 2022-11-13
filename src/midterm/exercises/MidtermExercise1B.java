@@ -68,70 +68,70 @@ package midterm.exercises;
 import java.util.Scanner;
 
 public class MidtermExercise1B {
-    public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-        int quizScore;
-        int examScore;
-        int perfectQuizScore;
-        int perfectExamScore;
-        double quizGrade;
-        double examGrade;
-        double prelimGrade;
+  public static void main(String[] args) {
+    Scanner reader = new Scanner(System.in);
+    int quizScore;
+    int examScore;
+    int perfectQuizScore;
+    int perfectExamScore;
+    double quizGrade;
+    double examGrade;
+    double prelimGrade;
 
-        while (true) {
-            System.out.print("Enter the Perfect Total Quiz Score: ");
-            perfectQuizScore = Integer.parseInt(reader.nextLine()); // 4
+    while (true) {
+      System.out.print("Enter the Perfect Total Quiz Score: ");
+      perfectQuizScore = Integer.parseInt(reader.nextLine()); // 4
 
-            if (perfectQuizScore <= 0)
-                System.out.println("Invalid value! Value must be greater than 0.");
-            else break;
-        }
-        while (true) {
-            System.out.print("Enter the Perfect Examination Score: ");
-            perfectExamScore = Integer.parseInt(reader.nextLine()); // 5
+      if (perfectQuizScore <= 0)
+      System.out.println("Invalid value! Value must be greater than 0.");
+      else break;
+    }
+    while (true) {
+      System.out.print("Enter the Perfect Examination Score: ");
+      perfectExamScore = Integer.parseInt(reader.nextLine()); // 5
 
-            if (perfectExamScore <= 0)
-                System.out.println("Invalid value! Value must be greater than 0.");
-            else break;
-        }
+      if (perfectExamScore <= 0)
+      System.out.println("Invalid value! Value must be greater than 0.");
+      else break;
+    }
 
-        while (true) {
-            System.out.print("Enter a student's total quiz score : ");
-            quizScore = Integer.parseInt(reader.nextLine()); // 6
+    while (true) {
+      System.out.print("Enter a student's total quiz score : ");
+      quizScore = Integer.parseInt(reader.nextLine()); // 6
 
-            if (quizScore > perfectQuizScore)
-                System.out.println("Invalid value! Score must not be greater than perfect score.");
-            else if (quizScore < 0)
-                System.out.println("Invalid value! Value must be greater than or equal to 0.");
-            else break;
-        }
-        while (true) {
-            System.out.print("Enter a student's examination score : ");
-            examScore = Integer.parseInt(reader.nextLine()); // 7
+      if (quizScore > perfectQuizScore)
+      System.out.println("Invalid value! Score must not be greater than perfect score.");
+      else if (quizScore < 0)
+      System.out.println("Invalid value! Value must be greater than or equal to 0.");
+      else break;
+    }
+    while (true) {
+      System.out.print("Enter a student's examination score : ");
+      examScore = Integer.parseInt(reader.nextLine()); // 7
 
-            if (examScore > perfectExamScore)
-                System.out.println("Invalid value! Score must not be greater than perfect score.");
-            else if (examScore < 0)
-                System.out.println("Invalid value! Value must be greater than or equal to 0.");
-            else break;
-        }
+      if (examScore > perfectExamScore)
+      System.out.println("Invalid value! Score must not be greater than perfect score.");
+      else if (examScore < 0)
+      System.out.println("Invalid value! Value must be greater than or equal to 0.");
+      else break;
+    }
 
-        quizGrade = (double) quizScore / perfectQuizScore * 50 + 50; // 8
-        examGrade = (double) examScore / perfectExamScore * 50 + 50; // 9
-        prelimGrade = (quizGrade + examGrade) / 2.0; // 10
+    quizGrade = (double) quizScore / perfectQuizScore * 50 + 50; // 8
+    examGrade = (double) examScore / perfectExamScore * 50 + 50; // 9
+    prelimGrade = (quizGrade + examGrade) / 2.0; // 10
 
-        if (prelimGrade > 99) {
-            prelimGrade = 99; // 11
-        } else if (prelimGrade < 65) {
-            prelimGrade = 65; // 12
-        }
+    if (prelimGrade > 99) {
+      prelimGrade = 99; // 11
+    } else if (prelimGrade < 65) {
+      prelimGrade = 65; // 12
+    }
 
-        System.out.println("\n Grade: " + prelimGrade); // 14
-        if (prelimGrade >= 75) { // 13
-            System.out.println(" Remark : PASSED");
-        } else { // 15
-            System.out.println(" Remark : FAILED");
-        }
-        System.exit(0);
-    } // end of the main method
+    System.out.println("\n Grade: " + prelimGrade); // 14
+    if (prelimGrade >= 75) { // 13
+      System.out.println(" Remark : PASSED");
+    } else { // 15
+      System.out.println(" Remark : FAILED");
+    }
+    System.exit(0);
+  } // end of the main method
 } // end of class

@@ -15,22 +15,22 @@ package prelim.activities;
 import java.util.Scanner;
 
 public class PowersForLoop {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("What is the base? ");
-        int base = Integer.parseInt(keyboard.nextLine());
+    System.out.print("What is the base? ");
+    int base = Integer.parseInt(keyboard.nextLine());
 
-        System.out.print("What is the exponent? ");
-        int exponent = Integer.parseInt(keyboard.nextLine());
+    System.out.print("What is the exponent? ");
+    int exponent = Integer.parseInt(keyboard.nextLine());
 
-        int result = 1;
-        int loopCount = exponent;
+    int result = 1;
+    int loopCount = exponent;
 
-        for (; loopCount > 0; loopCount--) {
-            result *= base;
-        }
-
-        System.out.printf("\nThe value of %d^%d is %d.\n", base, exponent, result);
+    for (; loopCount > 0; loopCount--) {
+      result *= base;
     }
+
+    System.out.printf("\nThe value of %d^%d is %d.\n", base, exponent, result);
+  }
 }

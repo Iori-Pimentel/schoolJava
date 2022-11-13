@@ -12,11 +12,11 @@
 
 package prelim.activities;
 public class HundredTimesDoWhile {
-    public static void main(String[] args) {
-        int i = 0;
-        do {
-            System.out.println("\tIori");
-            i++;
-        } while (i < 100);
-    }
+  public static void main(String[] args) {
+    int i = 0;
+    do {
+      System.out.println("\tIori");
+      i++;
+    } while (i < 100);
+  }
 }

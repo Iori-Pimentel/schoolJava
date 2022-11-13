@@ -29,24 +29,24 @@ import java.io.File;
 import java.util.Scanner;
 
 public class FilePrintSample {
-    public static void main(String[] args) {
-        PrintWriter fileWriter = null;
-        String enteredString = null;
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    PrintWriter fileWriter = null;
+    String enteredString = null;
+    Scanner keyboard = new Scanner(System.in);
 
-        try {
-            fileWriter = new PrintWriter(new FileOutputStream(new File("sample.txt")));
-            for (int counter=1; counter<=5; counter++) {
-                System.out.print("Enter a name: ");
-                enteredString = keyboard.nextLine();
-                fileWriter.println(enteredString);
-                System.out.println(enteredString+" was printed in sample.txt file");
-            }
-        } catch (Exception ex){
-            System.out.println("Error");
-            ex.printStackTrace();
-        }
-        fileWriter.close();
-        System.exit(0);
+    try {
+      fileWriter = new PrintWriter(new FileOutputStream(new File("sample.txt")));
+      for (int counter=1; counter<=5; counter++) {
+        System.out.print("Enter a name: ");
+        enteredString = keyboard.nextLine();
+        fileWriter.println(enteredString);
+        System.out.println(enteredString+" was printed in sample.txt file");
+      }
+    } catch (Exception ex){
+      System.out.println("Error");
+      ex.printStackTrace();
     }
+    fileWriter.close();
+    System.exit(0);
+  }
 }

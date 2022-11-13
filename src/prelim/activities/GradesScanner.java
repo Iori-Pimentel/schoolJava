@@ -19,25 +19,25 @@ package prelim.activities;
 import java.util.Scanner;
 
 public class GradesScanner {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("What is your first grade? ");
-        double firstGrade = Double.parseDouble(keyboard.nextLine());
+    System.out.print("What is your first grade? ");
+    double firstGrade = Double.parseDouble(keyboard.nextLine());
 
-        System.out.print("What is your second grade? ");
-        double secondGrade = Double.parseDouble(keyboard.nextLine());
+    System.out.print("What is your second grade? ");
+    double secondGrade = Double.parseDouble(keyboard.nextLine());
 
-        System.out.print("What is your third grade? ");
-        double thirdGrade = Double.parseDouble(keyboard.nextLine());
+    System.out.print("What is your third grade? ");
+    double thirdGrade = Double.parseDouble(keyboard.nextLine());
 
-        double avg = (firstGrade + secondGrade + thirdGrade) / 3;
+    double avg = (firstGrade + secondGrade + thirdGrade) / 3;
 
-        System.out.printf("\nYour grade average is %f\n", avg);
+    System.out.printf("\nYour grade average is %f\n", avg);
 
-        if (avg < 75)
-            System.out.println(":-(");
-        else
-            System.out.println("Good Job");
-    }
+    if (avg < 75)
+    System.out.println(":-(");
+    else
+    System.out.println("Good Job");
+  }
 }

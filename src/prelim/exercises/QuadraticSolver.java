@@ -46,7 +46,7 @@ public class QuadraticSolver {
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
     System.out.println("This program determines the roots of a quadratic equation" +
-    "\nof the form ax^2 +bx +c = 0.");
+      "\nof the form ax^2 +bx +c = 0.");
 
     System.out.print("Enter the coefficient of x^2 (a): ");
     double a = Double.parseDouble(keyboard.nextLine());
@@ -69,8 +69,8 @@ public class QuadraticSolver {
     double root2 = (-b - discriminantSqrt) / (2 * a);
 
     System.out.printf("\n%s%.2f%s%.2f%s%.2f%s%.2f%s%.2f%c%n", "a: ", a, ", b: ",
-    b, ", c: ", c, " has the roots ", root1, " and ", root2, '.');
+      b, ", c: ", c, " has the roots ", root1, " and ", root2, '.');
     System.exit(0);
-  
+
   }
 }

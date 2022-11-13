@@ -29,52 +29,52 @@ import java.lang.*;
 import java.util.Scanner;
 public class MidtermExercise5 {
 
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
 
-        System.out.print("Enter the amount of grades to compute: ");
-        int gradeCount = Integer.parseInt(keyboard.nextLine());
+    System.out.print("Enter the amount of grades to compute: ");
+    int gradeCount = Integer.parseInt(keyboard.nextLine());
 
-        int totalGrade = 0,totalUnits = 0, grade, units;
-        String postfix;
+    int totalGrade = 0,totalUnits = 0, grade, units;
+    String postfix;
 
-        for (int i = 1; i <= gradeCount; i++) {
-            postfix = switch (i % 10) {
-                case 1 -> "st";
-                case 2 -> "nd";
-                case 3 -> "rd";
-                default -> "th";
-            };
+    for (int i = 1; i <= gradeCount; i++) {
+      postfix = switch (i % 10) {
+        case 1 -> "st";
+        case 2 -> "nd";
+        case 3 -> "rd";
+        default -> "th";
+      };
 
-            System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
+      System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
 
-            while (true) {
-                grade = Integer.parseInt(keyboard.nextLine());
-                if (grade < 65 || grade > 99) {
-                    System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-                    System.out.printf("\nEnter again for the %d%s subject[65 < grade < 99]: ", i, postfix);
-                } else break;
-            }
+      while (true) {
+        grade = Integer.parseInt(keyboard.nextLine());
+        if (grade < 65 || grade > 99) {
+          System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+          System.out.printf("\nEnter again for the %d%s subject[65 < grade < 99]: ", i, postfix);
+        } else break;
+      }
 
-            System.out.printf("\nEnter the number of units for the %d%s subject: ", i, postfix);
+      System.out.printf("\nEnter the number of units for the %d%s subject: ", i, postfix);
 
-            while (true) {
-                units = Integer.parseInt(keyboard.nextLine());
-                if (units < 1 || units > 12) {
-                    System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
-                    System.out.printf("\nEnter again for the %d%s subject[1 < unit < 12]: ", i, postfix);
-                } else break;
-            }
+      while (true) {
+        units = Integer.parseInt(keyboard.nextLine());
+        if (units < 1 || units > 12) {
+          System.out.println(ANSI_RED + "Invalid Value\nTry Again..." + ANSI_RESET);
+          System.out.printf("\nEnter again for the %d%s subject[1 < unit < 12]: ", i, postfix);
+        } else break;
+      }
 
-            totalGrade += grade * units;
-            totalUnits += units;
-        }
-
-        double average = (double) totalGrade / totalUnits;
-        System.out.printf("%s%.2f%n", "Average Grade = ", average);
-        System.exit(0);
+      totalGrade += grade * units;
+      totalUnits += units;
     }
-    public static final String ANSI_RESET = "\u001B[0m"; // reset text color
-    public static final String ANSI_RED = "\u001B[31m"; // red color
+
+    double average = (double) totalGrade / totalUnits;
+    System.out.printf("%s%.2f%n", "Average Grade = ", average);
+    System.exit(0);
+  }
+  public static final String ANSI_RESET = "\u001B[0m"; // reset text color
+  public static final String ANSI_RED = "\u001B[31m"; // red color
 
 }

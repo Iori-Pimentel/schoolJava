@@ -36,40 +36,40 @@ import java.lang.*;
 import java.util.Scanner;
 
 public class GradeAverage1 {
-    public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
-        int grade;
-        int units;
-        int totalGrade = 0;
-        int totalUnits = 0;
-        double avg;
-        String postfix;
+  public static void main(String[] args) {
+    Scanner keyboard = new Scanner(System.in);
+    int grade;
+    int units;
+    int totalGrade = 0;
+    int totalUnits = 0;
+    double avg;
+    String postfix;
 
-        for (int i = 1; i <= 10; i++) {
-            postfix = switch (i) {
-                case 1 -> "st";
-                case 2 -> "nd";
-                case 3 -> "rd";
-                default -> "th";
-            };
+    for (int i = 1; i <= 10; i++) {
+      postfix = switch (i) {
+        case 1 -> "st";
+        case 2 -> "nd";
+        case 3 -> "rd";
+        default -> "th";
+      };
 
-            System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
-            grade = Integer.parseInt(keyboard.nextLine());
+      System.out.printf("\nEnter the grade of the student for the %d%s subject: ", i, postfix);
+      grade = Integer.parseInt(keyboard.nextLine());
 
-            System.out.printf("Enter the number of units for the %d%s subject: ", i, postfix);
-            units = Integer.parseInt(keyboard.nextLine());
+      System.out.printf("Enter the number of units for the %d%s subject: ", i, postfix);
+      units = Integer.parseInt(keyboard.nextLine());
 
-            totalGrade += grade * units;
-            totalUnits += units;
-        }
-        
-        avg = (double) totalGrade / totalUnits;
-        System.out.println("\nYour average is: " + avg);
+      totalGrade += grade * units;
+      totalUnits += units;
+    }
 
-        if (avg < 85) {
-            System.out.println("Sorry! You did not make it to the dean's list. Do better next term.");
-        } else {
-            System.out.println("Congratulations! You belong to the dean's list.");
-        }
-    } // end of main
+    avg = (double) totalGrade / totalUnits;
+    System.out.println("\nYour average is: " + avg);
+
+    if (avg < 85) {
+      System.out.println("Sorry! You did not make it to the dean's list. Do better next term.");
+    } else {
+      System.out.println("Congratulations! You belong to the dean's list.");
+    }
+  } // end of main
 } // end of class
