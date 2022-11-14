@@ -98,22 +98,22 @@ public class FinalsExercise3 {
       case 1: taxDue = 4000.00;
       break;
       case 2: taxDue = 4000.00 + (taxableIncome - 25000.00) * 0.08;
-break;
-case 3: taxDue = 12000.00 + (taxableIncome - 125000.00) * 0.10;
-break;
+      break;
+      case 3: taxDue = 12000.00 + (taxableIncome - 125000.00) * 0.10;
+      break;
       case 4: taxDue = 52000.00 + (taxableIncome - 525000.00) * 0.12;
-break;
+      break;
       default: taxDue = 0.00;
-}
+    }
     return taxDue; // ITEM 6
-} // end of computeTaxDue method
+  } // end of computeTaxDue method
   /**
 * displays a given taxable income and the corresponding tax amount on the output screen
      */
   public static void showResults(double taxableIncome, double taxDue) { // ITEM 7
-System.out.println();
+    System.out.println();
 
     System.out.printf("%-20s%15.2f%n","Taxable Income: ",taxableIncome);
-System.out.printf("%-20s%15.2f%n", "Tax Due = ", taxDue);
+    System.out.printf("%-20s%15.2f%n", "Tax Due = ", taxDue);
   } // end of showResults method
 } // end of ModularizedTaxationProgram class

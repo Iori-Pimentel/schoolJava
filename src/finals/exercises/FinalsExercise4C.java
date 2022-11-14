@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class FinalsExercise4C {
   public static void main(String[] args) {
     showIntroduction();
-    int[] unsortedNums = getNumsList();
+    int arrayLen = getArrayLen();
+    int[] unsortedNums = getNumsList(arrayLen);
     int[] sortedNums = selectionSort(unsortedNums);
     printOutput(unsortedNums, sortedNums);
   }
@@ -15,11 +16,19 @@ public class FinalsExercise4C {
     System.out.println("The output will be a sorted list of numbers using the Selection Sort.");
   }
 
-  public static int[] getNumsList() {
+  public static int getArrayLen() {
     Scanner keyboard = new Scanner(System.in);
-    int[] unsortedNums = new int[5];
+    System.out.print("Input the count for the array: ");
+
+    int arrayLen = Integer.parseInt(keyboard.nextLine());
+    return arrayLen;
+  }
+
+  public static int[] getNumsList(int arrayLen) {
+    Scanner keyboard = new Scanner(System.in);
+    int[] unsortedNums = new int[arrayLen];
     System.out.println("Numbers to sort:");
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < arrayLen; i++) {
       System.out.printf("[%d]\t: ", i + 1);
       unsortedNums[i] = Integer.parseInt(keyboard.nextLine());
     }
@@ -27,7 +36,7 @@ public class FinalsExercise4C {
   }
 
   public static int[] selectionSort(int[] unsortedNums) {
-    int[] sortedNums = new int[5];
+    int[] sortedNums = new int[unsortedNums.length];
 
     for (int i = 0; i < unsortedNums.length; i++) {
       sortedNums[i] = unsortedNums[i]; // Copy unsorted array to new array
@@ -48,14 +57,21 @@ public class FinalsExercise4C {
   }
 
   public static void printOutput(int[] unsortedNums, int[] sortedNums) {
-    System.out.print("Unsorted List: ");
+    System.out.println(); // Print unsorted integers
+    System.out.print(" Unsorted Integers: ");
     for (int i = 0; i < sortedNums.length; i++) {
       System.out.print(unsortedNums[i] + "\t");
     }
-    System.out.println();
 
-    System.out.print("  Sorted List: ");
+    System.out.println(); // Print integers in ascending order
+    System.out.print("[A]Sorted Integers: ");
     for (int i = 0; i < sortedNums.length; i++) {
+      System.out.print(sortedNums[i] + "\t");
+    }
+
+    System.out.println(); // Print integers in descending order
+    System.out.print("[D]Sorted Integers: ");
+    for (int i = sortedNums.length - 1; i >= 0; i--) {
       System.out.print(sortedNums[i] + "\t");
     }
   }
