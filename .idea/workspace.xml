@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Sorting Algos">
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="fixed finals 4d-4f">
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise5A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise5B.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise5C.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4E.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4E.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise4F.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +29,11 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="300" />
+    </hideBySeverity>
   </component>
   <component name="ProjectId" id="2EKvCms1aOMnv91bWo3blj0D6i2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -63,52 +68,13 @@
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FinalsExercise4F">
-    <configuration name="FinalsExercise4B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4B" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="finals.exercises.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalsExercise4C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4C" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="finals.exercises.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FinalsExercise4D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4D" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="finals.exercises.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.FinalsExercise5B">
     <configuration name="FinalsExercise4E" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4E" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="PATTERN" value="finals.exercises.GradeCalculatorUsingArrays" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,6 +84,45 @@
     </configuration>
     <configuration name="FinalsExercise4F" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4F" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.GradeCalculatorUsingArrays" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalsExercise5B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5B" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalsExercise5C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5C" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="finals.exercises.FinalsExercise5A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5A" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
@@ -131,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FinalsExercise4F" />
-        <item itemvalue="Application.FinalsExercise4E" />
-        <item itemvalue="Application.FinalsExercise4D" />
-        <item itemvalue="Application.FinalsExercise4C" />
-        <item itemvalue="Application.FinalsExercise4B" />
+        <item itemvalue="Application.FinalsExercise5B" />
+        <item itemvalue="Application.FinalsExercise5C" />
+        <item itemvalue="Application.finals.exercises.FinalsExercise5A" />
+        <item itemvalue="Application.finals.exercises.FinalsExercise4F" />
+        <item itemvalue="Application.finals.exercises.FinalsExercise4E" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667975088795</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed finals 4d-4f">
+      <created>1668403106735</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668403106735</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,6 +283,7 @@
     <MESSAGE value="temp commit" />
     <MESSAGE value="Test Commit" />
     <MESSAGE value="Sorting Algos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorting Algos" />
+    <MESSAGE value="fixed finals 4d-4f" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed finals 4d-4f" />
   </component>
 </project>
