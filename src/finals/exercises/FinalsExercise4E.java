@@ -1,3 +1,18 @@
+/**
+ * Name: Iori Z. Pimentel
+ * Date: Nov 14, 2022
+ * Activity Name and Number: Finals Exercise 4E
+ ------------------------------------------------------------
+Input:
+  Length of Array to sort
+  Memebers of Array as Strings
+Algorithm:
+  Create a copy of the array to sort
+  Sorting the array using Bubble Sort
+Output:
+  Print the unsorted array
+  Print the array in lexicographical order
+*/
 package finals.exercises;
 
 import java.util.Scanner;
