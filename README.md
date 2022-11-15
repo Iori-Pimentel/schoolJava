@@ -1,2 +1,2 @@
 # schoolJava
-For SLU Class.
+Iori Pimentel
