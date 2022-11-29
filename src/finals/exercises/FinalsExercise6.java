@@ -18,9 +18,11 @@ If an input value is invalid, the user should be given an appropriate error mess
 another value. The user may repeatedly supply an invalid value. The processing should continue only if the user
 enters a valid value.
 */
-package midterm.exercises;
+package finals.exercises;
+
 import java.util.Scanner;
 import java.lang.*;
+
 public class FinalsExercise6 {
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
@@ -28,7 +30,7 @@ public class FinalsExercise6 {
     String pName;
     double uPrice, totalCost, discount, discountedCost, amountTendered, change;
     int qty, dRate;
-    String[] validProducts = {"pen", "pencil", "paper", "notebook", "eraser"};
+    String[] validProducts = { "pen", "pencil", "paper", "notebook", "eraser" };
     boolean valid = false;
 
     while (true) {
@@ -42,7 +44,8 @@ public class FinalsExercise6 {
 
       if (!valid)
         System.out.println(ANSI_RED + "Invalid Value\nName does not match available products..." + ANSI_RESET);
-      else break;
+      else
+        break;
     }
 
     while (true) {
@@ -50,8 +53,9 @@ public class FinalsExercise6 {
       qty = Integer.parseInt(keyboard.nextLine());
 
       if (qty < 0)
-      System.out.println(ANSI_RED + "Invalid Value\nQuantity cannot be negative..." + ANSI_RESET);
-      else break;
+        System.out.println(ANSI_RED + "Invalid Value\nQuantity cannot be negative..." + ANSI_RESET);
+      else
+        break;
     }
 
     while (true) {
@@ -59,8 +63,9 @@ public class FinalsExercise6 {
       uPrice = Double.parseDouble(keyboard.nextLine());
 
       if (uPrice < 0)
-      System.out.println(ANSI_RED + "Invalid Value\nUnit Price cannot be negative..." + ANSI_RESET);
-      else break;
+        System.out.println(ANSI_RED + "Invalid Value\nUnit Price cannot be negative..." + ANSI_RESET);
+      else
+        break;
     }
 
     while (true) {
@@ -68,8 +73,9 @@ public class FinalsExercise6 {
       dRate = Integer.parseInt(keyboard.nextLine());
 
       if (dRate < 0 || dRate > 100)
-      System.out.println(ANSI_RED + "Invalid Value\nDiscount Rate should be between 0 and 100..." + ANSI_RESET);
-      else break;
+        System.out.println(ANSI_RED + "Invalid Value\nDiscount Rate should be between 0 and 100..." + ANSI_RESET);
+      else
+        break;
     }
 
     totalCost = uPrice * qty;
@@ -81,8 +87,9 @@ public class FinalsExercise6 {
       amountTendered = Double.parseDouble(keyboard.nextLine());
 
       if (amountTendered < discountedCost)
-      System.out.println(ANSI_RED + "Invalid Value\nCash Tendered is not enough..." + ANSI_RESET);
-      else break;
+        System.out.println(ANSI_RED + "Invalid Value\nCash Tendered is not enough..." + ANSI_RESET);
+      else
+        break;
     }
 
     change = amountTendered - discountedCost;
@@ -98,4 +105,3 @@ public class FinalsExercise6 {
   public static final String ANSI_RESET = "\u001B[0m"; // reset text color
   public static final String ANSI_RED = "\u001B[31m"; // red color
 } // end of class
-
