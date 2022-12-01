@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Random;
 
 public class Test {
 
@@ -7,6 +8,7 @@ public class Test {
   public static String[] questions;
   public static String[] calculatedAnswer;
   public static Scanner keyboard = new Scanner(System.in);
+  public static Random rand = new Random();
   public static int leftTextCount;
   public static int rightTextCount;
   public static int menuWidth;
@@ -17,9 +19,10 @@ public class Test {
   public static String yellowFG = "\033[33m";
   public static String redFG = "\033[31m";
   public static String blueFG = "\033[34m";
-  public static String grayFG = "\033[30;40m";
+  public static String blackBG = "\033[40m";
   public static String greenFG = "\033[32m";
   public static String defaultFG = "\033[39m";
+  public static String defaultBG = "\033[49m";
   public static String saveCursor = "\033[s";
   public static String updateCursor = "\033[u";
 
@@ -34,7 +37,7 @@ public class Test {
   public static void showIntroduction() {
     menuWidth = 60;
 
-    // System.out.print("\033[H\033[2J"); // Clear Screen
+    System.out.print("\033[H\033[2J"); // Clear Screen
 
     String[] startText = {
         "Saint Louis University University University University University University",
@@ -45,11 +48,12 @@ public class Test {
         "Programmer"
     };
 
-    menuHeight = startText.length + 2;
+    menuHeight = getLineCount(startText) + 1;
     createMenu(menuWidth, menuHeight, 5, 5);
     print("College of Information and Computing Sciences", 't');
     print(startText, 'd');
-    waitEnter(1);
+    System.out.println("\033[2F");
+    waitEnter();
   }
 
   public static void showMainMenu() {
@@ -109,13 +113,13 @@ public class Test {
         if (choice < 1 || choice > options.length)
           print("Invalid Choice", 'e');
         else
+          System.out.print("\033[H\033[2J"); // Clear Screen
           return choice;
 
       } catch (NumberFormatException e) {
         print("Try Again", 'e');
       }
     }
-
   }
 
   public static void showMathMenu() {
@@ -237,19 +241,32 @@ public class Test {
     };
 
     int choice = getChoice(options, "Recording Routines [Sub Menu]");
+
     String[] names;
     int[] grades;
     doWrapBool = false;
+    menuWidth = 50;
+    questions = new String[] {
+        "Amount to Sort: | Write the Intended Value"
+    };
+
     switch (choice) {
       case 1:
-        recordRoutine1();
-        selectionSort(stringInputMenu());
-        title = "Sort Names";
+        recordingRoutine1();
+        names = stringInputMenu();
+        selectionSort(names);
+        calculatedAnswer = names;
+        title = "Sort Student Names in Alphabetical Order";
         break;
-      // case 2:
-      // recordRoutine2(); break;
+      case 2:
+        recordingRoutine2();
+        names = stringInputMenu();
+        selectionSort(names);
+        calculatedAnswer = names;
+        title = "Sort Salesmen Names in Alphabetical Order";
+        break;
       case 3:
-        recordRoutine3();
+        recordingRoutine3();
         names = stringInputMenu();
         grades = gradeinputMenu(names);
         selectionSort(names, grades);
@@ -264,7 +281,7 @@ public class Test {
         title = "Sort Names and Grades in Alphabetical Order";
         break;
       case 4:
-        recordRoutine4();
+        recordingRoutine4();
         names = stringInputMenu();
         grades = gradeinputMenu(names);
         selectionSort(grades, names);
@@ -278,8 +295,9 @@ public class Test {
         }
         title = "Sort Names and Grades Ranked by Grades";
         break;
-      // case 5:
-      // recordRoutine5(); break;
+      case 5:
+        System.out.print("\033[H\033[2J"); // Clear Screen
+        return;
     }
     showAnswer();
   }
@@ -290,8 +308,8 @@ public class Test {
     questions = new String[count];
 
     for (int i = 0; i < count; i++) {
-      questions[i] = String.format("[%s] Grades: ", names[i]);
-      questions[i] += "| Enter Grades";
+      questions[i] = String.format("[%s] Grade: ", names[i]);
+      questions[i] += "| 0 < Grade < 100";
     }
 
     for (int i = 0; i < count; i++) {
@@ -302,7 +320,7 @@ public class Test {
       System.out.print("\033[u");
     }
 
-    return inputPositiveInt(questions);
+    return inputRangeInt(0, 100);
   }
 
   public static void selectionSort(String[] sortedNames) {
@@ -358,37 +376,24 @@ public class Test {
     }
   }
 
-  public static void recordRoutine1() {
-    menuWidth = 50;
-
-    title = "Record Routines [Record Routine 1]";
-    description = "Routine to sort list of names";
-
-    questions = new String[] {
-        "Count: | Integer"
-    };
+  public static void recordingRoutine1() {
+    title = "Recording Routines [Record Routine 1]";
+    description = "Routine to sort list of names of Students";
   }
 
-  public static void recordRoutine3() {
-    menuWidth = 50;
+  public static void recordingRoutine2() {
+    title = "Recording Routines [Record Routine 2]";
+    description = "Routine to sort list of names of Salesmen";
+  }
 
-    title = "Record Routines [Record Routine 3]";
+  public static void recordingRoutine3() {
+    title = "Recording Routines [Record Routine 3]";
     description = "Routine to sort list of [names] and grades";
-
-    questions = new String[] {
-        "Count: | Integer"
-    };
   }
 
-  public static void recordRoutine4() {
-    menuWidth = 50;
-
-    title = "Record Routines [Record Routine 4]";
+  public static void recordingRoutine4() {
+    title = "Recording Routines [Record Routine 4]";
     description = "Routine to sort list of names and [grades]";
-
-    questions = new String[] {
-        "Count: | Integer"
-    };
   }
 
   public static void showMiscMenu() {
@@ -408,8 +413,11 @@ public class Test {
     int choice = getChoice(options, "Miscellaneous Routines [Sub Menu]");
 
     switch (choice) {
-      // case 1:
-      // miscRoutine1(); break;
+      case 1:
+        miscRoutine1();
+        int randomInt = rand.nextInt(100);
+        inputCorrectGuess(randomInt);
+        break;
       // case 2:
       // miscRoutine2(); break;
       // case 3:
@@ -429,6 +437,11 @@ public class Test {
       // case 10:
       // miscRoutine10(); break;
     }
+  }
+
+  public static void miscRoutine1() {
+    title = "Miscellaneous Routines [Miscellaneous Routine 1]";
+    description = "Routine to play a Number Guessing Game";
   }
 
   public static void showDescription() {
@@ -463,62 +476,23 @@ public class Test {
     createMenu(menuWidth, menuHeight, 5, 2);
     print(title, 't');
     for (int i = 0; i < count; i++) {
-      printLeftRight("Name: | Valid String");
-      userInputs[i] = inputString();
+      printLeftRight("Name: | Accepts only valid names");
+      userInputs[i] = inputValidName();
     }
 
     return userInputs;
   }
 
-  public static String[] stringAndIntegerInputMenu() {
-    showDescription();
-    System.out.print("\033[1B");
-    int count = inputPositiveInt(questions)[0];
-    String[][] userInputs = new String[2][count];
-
-    menuHeight = count + 1;
-    createMenu(menuWidth, menuHeight, 5, 2);
-    menuHeight = count + 4;
-    print(title, 't');
-    for (int i = 0; i < count; i++) {
-      String leftSide = String.format("[%d] Name", i + 1);
-      printLeftRight(leftSide + ": | Valid String");
-      userInputs[0][i] = inputString();
+  public static String inputValidName() {
+    while (true) {
+      String name = keyboard.nextLine();
+      System.out.print("\033[u\033[1B");
+      if (!name.matches("^[a-zA-Z]+( [a-zA-Z]+)*$")) {
+        print("Must be a valid name", 'e');
+      } else {
+        return name;
+      }
     }
-
-    System.out.printf("\033[%dF", count);
-    System.out.printf("\033[%dC\033[s", lPad - 2);
-
-    for (int i = 0; i < count; i++) {
-      String leftSide = String.format("[%s] Grade: ", userInputs[0][i]);
-      print(leftSide, 'i');
-      print("Valod Integr", 'c');
-      userInputs[1][i] = inputString();
-    }
-
-    selectionSort(userInputs[0], userInputs[1]);
-
-    String[] results = new String[count];
-
-    int l = getLongestRow(userInputs[0]);
-
-    for (int i = 0; i < count; i++) {
-      String left = userInputs[0][i];
-      String right = userInputs[1][i];
-      String leftSide = String.format("%5s%-" + (5 + l) + "s", "", left);
-      String rightSide = right;
-      results[i] = leftSide + rightSide;
-    }
-
-    doWrapBool = false;
-    calculatedAnswer = results;
-  }
-
-  public static String inputString() {
-    String name = keyboard.nextLine();
-    System.out.print("\033[u\033[1B");
-
-    return name;
   }
 
   public static void showAnswer() {
@@ -538,7 +512,7 @@ public class Test {
     createMenu(menuWidth, menuHeight, 5, 1);
     print(title, 't');
     print(calculatedAnswer, 'a');
-    waitEnter(1);
+    waitEnter();
   }
 
   public static void mathRoutine1() {
@@ -867,9 +841,10 @@ public class Test {
     String[] table = new String[size];
     Arrays.fill(table, "");
 
+    int length = String.valueOf(size * size).length();
     for (int i = 1; i <= size; i++) {
       for (int j = 1; j <= size; j++) {
-        table[i - 1] += String.format("%4d", i * j);
+        table[i - 1] += String.format("%" + (length + 2) + "d", i * j);
       }
     }
 
@@ -948,9 +923,9 @@ public class Test {
 
       for (int j = 0; j <= i; j++) {
         if (j == 0) {
-          table[i] = String.format("%" + ((size - i) * 2) + "s", "");
+          table[i] = String.format("%" + ((size - i) * 3) + "s", "");
         }
-        table[i] += String.format("%-4d", num);
+        table[i] += String.format("%-6d", num);
         num = num * (i - j) / (j + 1);
       }
     }
@@ -958,15 +933,15 @@ public class Test {
     return table;
   }
 
-  public static void waitEnter(int spacing) {
+  public static void waitEnter() {
     String enter = "Press Enter to Continue...";
     int start = lPad + (menuWidth - enter.length()) - 5;
 
-    String text = String.format("\033[%dE", spacing) +
+    String text =
         String.format("\033[%dC", start) +
-        grayFG +
+        blackBG +
         enter +
-        defaultFG;
+        defaultBG;
 
     System.out.print(text);
     keyboard.nextLine();
@@ -976,7 +951,7 @@ public class Test {
   public static void createMenu(int widLen, int heiLen, int topPad, int leftPad) {
     menuWidth = widLen;
     menuHeight = heiLen;
-    lPad = heiLen;
+    lPad = leftPad;
     tPad = topPad;
     String space = String.format("%" + widLen + "s", "");
     String pad = String.format("%" + leftPad + "s", "");
@@ -1015,6 +990,61 @@ public class Test {
           System.out.print("\033[u\033[1B");
           if (num < 0) {
             print("Value must be greater than 0", 'e');
+          } else {
+            answers[answerCount] = num;
+            answerCount++;
+            break;
+          }
+        } catch (NumberFormatException e) {
+          print("Try Again", 'e');
+        }
+      }
+    }
+
+    return answers;
+  }
+
+  public static String inputCorrectGuess(int randomInt) {
+    String answers = "";
+    printLeftRight("Guess: | Start the answer");
+
+    while (true) {
+      try {
+        int num = Integer.parseInt(keyboard.nextLine());
+        System.out.print("\033[u\033[1B");
+
+        answers += num + " ";
+        if (num < randomInt) {
+          print("Answer must be bigger than [" + num + "]", 'e');
+        } else if (num > randomInt){
+          print("Answer must be smaller than [" + num + "]", 'e');
+        } else {
+          break;
+        }
+      } catch (NumberFormatException e) {
+        print("Try Again", 'e');
+      }
+    }
+
+    return answers;
+  }
+
+  public static int[] inputRangeInt(int min, int max) {
+    int[] answers = new int[questions.length];
+    int answerCount = 0;
+
+    for (String question : questions) {
+      printLeftRight(question);
+
+      while (true) {
+        try {
+          int num = Integer.parseInt(keyboard.nextLine());
+          System.out.print("\033[u\033[1B");
+
+          if (num <= min) {
+            print("Value must be greater than " + min, 'e');
+          } else if (num >= max){
+            print("Value must be less than " + max, 'e');
           } else {
             answers[answerCount] = num;
             answerCount++;
@@ -1083,6 +1113,7 @@ public class Test {
   public static void printUtil(String text, char type) {
     String printValue = "";
     int padCount;
+    String endText = "";
 
     switch (type) {
       case 't':
@@ -1106,30 +1137,39 @@ public class Test {
         break;
     }
 
+    if (text.indexOf("[") != -1) {
+      int indexR = text.indexOf("]");
+      int indexL = text.indexOf("[");
+      endText = text.substring(indexR);
+      text = text.substring(0, indexL) + "[" + defaultFG +
+      text.substring(indexL + 1, indexR);
+    }
+
     switch (type) {
       case 't':
         printValue += "\033[2C";
         printValue += yellowFG;
+        text += yellowFG;
         break;
       case 'i':
         printValue += blueFG;
-        if (text.indexOf("[") != -1) {
-          int index = text.indexOf("]");
-          text = "[" + defaultFG + text.substring(1, index) + blueFG + text.substring(index);
-        }
+        text += blueFG;
         break;
       case 'a':
         printValue += greenFG;
+        text += greenFG;
         break;
       case 'c':
         printValue += greenFG;
+        text += greenFG;
         break;
       case 'e':
         printValue += redFG;
+        text += redFG;
         break;
     }
 
-    printValue += text;
+    printValue += text + endText;
 
     switch (type) {
       case 't':
