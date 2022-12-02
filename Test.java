@@ -1,5 +1,7 @@
 import java.util.*;
 import java.util.Random;
+import java.lang.*;
+import java.math.*;
 
 public class Test {
 
@@ -110,12 +112,13 @@ public class Test {
       try {
         int choice = Integer.parseInt(keyboard.nextLine());
 
-        if (choice < 1 || choice > options.length)
+        if (choice < 1 || choice > options.length) {
           print("Invalid Choice", 'e');
-        else
+        }
+        else {
           System.out.print("\033[H\033[2J"); // Clear Screen
           return choice;
-
+        }
       } catch (NumberFormatException e) {
         print("Try Again", 'e');
       }
@@ -245,7 +248,7 @@ public class Test {
     String[] names;
     int[] grades;
     doWrapBool = false;
-    menuWidth = 50;
+    menuWidth = 80;
     questions = new String[] {
         "Amount to Sort: | Write the Intended Value"
     };
@@ -270,36 +273,38 @@ public class Test {
         names = stringInputMenu();
         grades = gradeinputMenu(names);
         selectionSort(names, grades);
-        calculatedAnswer = new String[names.length];
-
-        int l = getLongestRow(names);
-
-        for (int i = 0; i < names.length; i++) {
-          calculatedAnswer[i] = String.format("%5s%-" + (5 + l) + "s", "", names[i]);
-          calculatedAnswer[i] += grades[i];
-        }
-        title = "Sort Names and Grades in Alphabetical Order";
+        formatNamesGrades(names, grades);
+        title = "`Alphabetical Order";
         break;
       case 4:
         recordingRoutine4();
         names = stringInputMenu();
         grades = gradeinputMenu(names);
         selectionSort(grades, names);
-        calculatedAnswer = new String[names.length];
-
-        int l2 = getLongestRow(names);
-
-        for (int i = 0; i < names.length; i++) {
-          calculatedAnswer[i] = String.format("%5s%-" + (5 + l2) + "s", "", names[i]);
-          calculatedAnswer[i] += grades[i];
-        }
-        title = "Sort Names and Grades Ranked by Grades";
+        formatNamesGrades(names, grades);
+        title = "Ranked by Grades";
         break;
       case 5:
         System.out.print("\033[H\033[2J"); // Clear Screen
         return;
     }
     showAnswer();
+  }
+
+  public static void formatNamesGrades(String[] names, int[] grades) {
+    calculatedAnswer = new String[names.length + 2];
+    int namesLength = getLongestRow(names);
+
+    int leftPad = namesLength + 5;
+    int rightPad = 9;
+    calculatedAnswer[0] = center("  [Names]", leftPad);
+    calculatedAnswer[1] = "└" + calculatedAnswer[0].replaceAll(".", "─");
+    calculatedAnswer[0] += "  [Grades]";
+    calculatedAnswer[1] += "┼────────┘";
+    for (int i = 0; i < names.length; i++) {
+      calculatedAnswer[i + 2] = " " + center(names[i], leftPad);
+      calculatedAnswer[i + 2] += "│" + center(grades[i], rightPad);
+    }
   }
 
   public static int[] gradeinputMenu(String[] names) {
@@ -314,9 +319,8 @@ public class Test {
 
     for (int i = 0; i < count; i++) {
       System.out.print("\033[1A");
-      // System.out.print("\033[3D");
       System.out.print("\033[s");
-      print("               ", 'c');
+      clearComment("√", ".");
       System.out.print("\033[u");
     }
 
@@ -412,6 +416,7 @@ public class Test {
 
     int choice = getChoice(options, "Miscellaneous Routines [Sub Menu]");
 
+    menuWidth = 80;
     switch (choice) {
       case 1:
         miscRoutine1();
@@ -428,8 +433,10 @@ public class Test {
       // miscRoutine5(); break;
       // case 6:
       // miscRoutine6(); break;
-      // case 7:
-      // miscRoutine7(); break;
+      case 7:
+        miscRoutine7();
+        waterBill();
+        break;
       // case 8:
       // miscRoutine8(); break;
       // case 9:
@@ -443,6 +450,77 @@ public class Test {
     title = "Miscellaneous Routines [Miscellaneous Routine 1]";
     description = "Routine to play a Number Guessing Game";
   }
+
+  public static void miscRoutine7() {
+    title = "Miscellaneous Routines [Miscellaneous Routine 7]";
+    description = "Routine to Calculate Water Bill";
+  }
+
+  public static void waterBill() {
+    title = "Water Bill";
+    description = "Give";
+
+    createMenu(menuWidth, 10, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+
+    String consumer; // to hold name of consumer
+    char cType; // to hold type of consumer
+
+    int nCMUsed; // to hold number of cubic meters of water used
+    int minCMResidential = 12; // to hold cut-off for minimum Bill for residential consumers
+    double minBillResidential = 180.00; // minimum bill for <= 12 Cubic Meters used
+    float rateResidential = 30.00F; // cost of 1 Cubic Meter above the min. consumption
+    int minCMCommercial = 30; /* to hold cut-off for minimum Bill for commercial consumers */
+    double minBillCommercial = 600.00; // minimum bill for <= 20Cubic Meters used
+    float rateCommercial = 50.00F; /* cost of 1 Cubic Meter above the min. consumption for commercial consumers */
+    double amountDue = 0.0; // to hold the amount due
+
+    print("Enter the consumer's name: ", 'i');
+    consumer = inputValidName();
+
+    int previousReading = inputRangeInt("Enter the meter reading last month: | Must be positive", 0);
+    int presentReading = inputRangeInt("Enter the meter reading this month: | Must be grater than last month", previousReading);
+
+    nCMUsed = presentReading - previousReading;
+
+    printLeftRight( "Enter the classification as a consumer: | [C]ommercial or [R]esidential");
+
+    while (true) {
+      cType = keyboard.nextLine().toLowerCase().charAt(0);
+
+      if (!(cType == 'r' || cType == 'c')) {
+        print("[C]ommercial and [R]esidential", 'e');
+      }
+      else break;
+    }
+
+    switch (cType) {
+      case 'r':
+      amountDue = minBillResidential;
+      if (nCMUsed > minCMResidential) {
+        amountDue += (nCMUsed - minCMResidential) * rateResidential;
+      }
+      break;
+      case 'c':
+      amountDue = minBillCommercial;
+      if (nCMUsed > minCMCommercial) {
+        amountDue += (nCMUsed - minCMCommercial) * rateCommercial;
+      }
+      break;
+    }
+
+    createMenu(menuWidth, 7, 5, 1);
+    print("Water Bill Receipt", 't');
+    calculatedAnswer = new String[] {
+      String.format("Consumer Name: [%s]", consumer),
+      String.format("Last Month's Reading: [%d]", previousReading),
+      String.format("Current Month's Reading: [%d]", presentReading),
+      String.format("Consumption this Month: [%d]", nCMUsed),
+      String.format("Amount Due: [%.2f]", amountDue)
+    };
+    print(calculatedAnswer, 'a');
+} // end of main
 
   public static void showDescription() {
     menuHeight = getLineCount(description) + questions.length + 2;
@@ -469,7 +547,7 @@ public class Test {
   public static String[] stringInputMenu() {
     showDescription();
     System.out.print("\033[1B");
-    int count = inputPositiveInt(questions)[0];
+    int count = inputRangeInt(questions[0], 1);
     String[] userInputs = new String[count];
 
     menuHeight = count + 1;
@@ -486,13 +564,54 @@ public class Test {
   public static String inputValidName() {
     while (true) {
       String name = keyboard.nextLine();
-      System.out.print("\033[u\033[1B");
-      if (!name.matches("^[a-zA-Z]+( [a-zA-Z]+)*$")) {
-        print("Must be a valid name", 'e');
+      clearComment(name, "√");
+
+      if (name.matches("[ ]*")) {
+        print("No Empty Names", 'e');
+        continue;
+      }
+
+      String startErrorMsg = "Invalid Characters: ";
+      String errorMsg = startErrorMsg;
+      String removedLeading = name.stripLeading();
+      String removedTrailing = name.stripTrailing();
+
+      if (!removedLeading.equals(name)) {
+        errorMsg += "[Leading Space]";
+      }
+
+      if (!removedTrailing.equals(name)) {
+        errorMsg += "[Trailing Space]";
+      }
+
+      String removedValid = name.replaceAll("[a-zA-Z. ]", "");
+      if (!removedValid.isEmpty()) {
+        errorMsg += String.format("[%s]", removedValid);
+      }
+
+      if (!errorMsg.equals(startErrorMsg)) {
+        print(errorMsg, 'e');
       } else {
         return name;
       }
+
     }
+  }
+
+  public static void clearComment(int toRemove, String toAdd) {
+    clearComment(String.valueOf(toRemove), toAdd);
+  }
+
+  public static void clearComment(double toRemove, String toAdd) {
+    clearComment(String.valueOf(toRemove), toAdd);
+  }
+
+  public static void clearComment(String toRemove, String toAdd) {
+    int inputLength = toRemove.length();
+    int padCount = menuWidth - (leftTextCount + inputLength + 3);
+
+    print(String.format("%" + (padCount) + "s", toAdd), 'c');
+    System.out.print("\033[u\033[1B");
   }
 
   public static void showAnswer() {
@@ -888,14 +1007,15 @@ public class Test {
 
   public static String[] mathFibonacci(int[] inputs) {
     int number = inputs[0];
-    int firstTerm = 1, secondTerm = 1;
-    int nextTerm = 1;
+    BigInteger firstTerm = BigInteger.ONE;
+    BigInteger secondTerm = BigInteger.ONE;
+    BigInteger nextTerm = BigInteger.ONE;
 
     String sequence = "1";
     for (int i = 1; i < number - 1; ++i) {
       sequence += ", " + secondTerm;
 
-      nextTerm = firstTerm + secondTerm;
+      nextTerm = firstTerm.add(secondTerm);
       firstTerm = secondTerm;
       secondTerm = nextTerm;
     }
@@ -981,37 +1101,72 @@ public class Test {
     int[] answers = new int[questions.length];
     int answerCount = 0;
 
-    for (String question : questions) {
-      printLeftRight(question);
+    for (int i = 0; i < answers.length; i++) {
+      answers[i] = inputRangeInt(questions[0], 0);
+    }
 
-      while (true) {
-        try {
-          int num = Integer.parseInt(keyboard.nextLine());
-          System.out.print("\033[u\033[1B");
-          if (num < 0) {
-            print("Value must be greater than 0", 'e');
-          } else {
-            answers[answerCount] = num;
-            answerCount++;
-            break;
-          }
-        } catch (NumberFormatException e) {
-          print("Try Again", 'e');
+    return answers;
+  }
+
+  public static int inputRangeInt(String question, int min) {
+    printLeftRight(question);
+
+    while (true) {
+      try {
+        int num = Integer.parseInt(keyboard.nextLine());
+        clearComment(num, "√");
+        if (num <= min) {
+          print("Value must be greater than " + "[" + min + "]", 'e');
+        } else {
+          return num;
         }
+      } catch (NumberFormatException e) {
+        print("Try Again", 'e');
       }
+    }
+  }
+
+  public static int inputRangeInt(String question, int min, int max) {
+    printLeftRight(question);
+
+    while (true) {
+      try {
+        int num = Integer.parseInt(keyboard.nextLine());
+        clearComment(num, "√");
+        if (num <= min) {
+          print("Value must be greater than " + "[" + min + "]", 'e');
+        } else if (num >= max){
+          print("Value must be less than " + "[" + max + "]", 'e');
+        } else {
+          return num;
+        }
+      } catch (NumberFormatException e) {
+        print("Try Again", 'e');
+      }
+    }
+  }
+
+  public static int[] inputRangeInt(int min, int max) {
+    int[] answers = new int[questions.length];
+    int answerCount = 0;
+
+    for (int i = 0; i < answers.length; i++) {
+      answers[i] = inputRangeInt(questions[i], min, max);
     }
 
     return answers;
   }
 
   public static String inputCorrectGuess(int randomInt) {
+    createMenu(menuWidth, menuHeight, 5, 1);
+    print("Number Guessing Game", 't');
     String answers = "";
     printLeftRight("Guess: | Start the answer");
 
     while (true) {
       try {
         int num = Integer.parseInt(keyboard.nextLine());
-        System.out.print("\033[u\033[1B");
+        clearComment(num, "√");
 
         answers += num + " ";
         if (num < randomInt) {
@@ -1029,35 +1184,6 @@ public class Test {
     return answers;
   }
 
-  public static int[] inputRangeInt(int min, int max) {
-    int[] answers = new int[questions.length];
-    int answerCount = 0;
-
-    for (String question : questions) {
-      printLeftRight(question);
-
-      while (true) {
-        try {
-          int num = Integer.parseInt(keyboard.nextLine());
-          System.out.print("\033[u\033[1B");
-
-          if (num <= min) {
-            print("Value must be greater than " + min, 'e');
-          } else if (num >= max){
-            print("Value must be less than " + max, 'e');
-          } else {
-            answers[answerCount] = num;
-            answerCount++;
-            break;
-          }
-        } catch (NumberFormatException e) {
-          print("Try Again", 'e');
-        }
-      }
-    }
-
-    return answers;
-  }
 
   public static double[] inputPositiveDouble(String[] questions) {
     double[] answers = new double[questions.length];
@@ -1069,7 +1195,7 @@ public class Test {
       while (true) {
         try {
           double num = Double.parseDouble(keyboard.nextLine());
-          System.out.print("\033[u\033[1B");
+          clearComment(num, "√");
           if (num < 0) {
             print("Value must be greater than 0", 'e');
           } else {
@@ -1113,7 +1239,7 @@ public class Test {
   public static void printUtil(String text, char type) {
     String printValue = "";
     int padCount;
-    String endText = "";
+    String color = "";
 
     switch (type) {
       case 't':
@@ -1128,6 +1254,11 @@ public class Test {
         break;
 
       case 'c':
+        rightTextCount = text.length();
+        padCount = menuWidth - rightTextCount - leftTextCount - 2;
+        printValue += updateCursor;
+        printValue += "\033[" + (leftTextCount + padCount)+ "C";
+        break;
       case 'e':
         rightTextCount = text.length();
         padCount = menuWidth - rightTextCount - leftTextCount - 2;
@@ -1137,39 +1268,34 @@ public class Test {
         break;
     }
 
-    if (text.indexOf("[") != -1) {
-      int indexR = text.indexOf("]");
-      int indexL = text.indexOf("[");
-      endText = text.substring(indexR);
-      text = text.substring(0, indexL) + "[" + defaultFG +
-      text.substring(indexL + 1, indexR);
-    }
 
     switch (type) {
       case 't':
         printValue += "\033[2C";
-        printValue += yellowFG;
-        text += yellowFG;
+        color = yellowFG;
         break;
       case 'i':
-        printValue += blueFG;
-        text += blueFG;
+        color = blueFG;
         break;
       case 'a':
-        printValue += greenFG;
-        text += greenFG;
+        color = greenFG;
         break;
       case 'c':
-        printValue += greenFG;
-        text += greenFG;
+        color = greenFG;
         break;
       case 'e':
-        printValue += redFG;
-        text += redFG;
+        color = redFG;
         break;
     }
 
-    printValue += text + endText;
+
+    if (text.indexOf("[") != -1) {
+      String regex = "(\\[)(.+?)(\\])";
+      text = text.replaceAll(regex, "[" + defaultFG + "$2" + color + "]");
+    }
+
+    printValue += color;
+    printValue += text;
 
     switch (type) {
       case 't':
@@ -1203,7 +1329,8 @@ public class Test {
 
   public static String[] wrapLine(String line) {
     String[] words = line.split(" ");
-    String[] textArr = new String[16];
+    int approximateCount = Math.max((line.length() / 30), 8);
+    String[] textArr = new String[approximateCount];
 
     Arrays.fill(textArr, "");
     int rowIndex = 0;
@@ -1247,4 +1374,27 @@ public class Test {
     return result;
   }
 
+  
+  public static String center(String s, int size) {
+    return center(s, size, ' ');
+  }
+
+  public static String center(int d, int size) {
+    return center(String.valueOf(d), size, ' ');
+  }
+
+  public static String center(String s, int size, char pad) {
+    if (s == null || size <= s.length())
+    return s;
+
+    StringBuilder sb = new StringBuilder(size);
+    for (int i = 0; i < (size - s.length()) / 2; i++) {
+      sb.append(pad);
+    }
+    sb.append(s);
+    while (sb.length() < size) {
+      sb.append(pad);
+    }
+    return sb.toString();
+  }
 }
