@@ -114,8 +114,7 @@ public class Test {
 
         if (choice < 1 || choice > options.length) {
           print("Invalid Choice", 'e');
-        }
-        else {
+        } else {
           System.out.print("\033[H\033[2J"); // Clear Screen
           return choice;
         }
@@ -480,47 +479,48 @@ public class Test {
     consumer = inputValidName();
 
     int previousReading = inputRangeInt("Enter the meter reading last month: | Must be positive", 0);
-    int presentReading = inputRangeInt("Enter the meter reading this month: | Must be grater than last month", previousReading);
+    int presentReading = inputRangeInt("Enter the meter reading this month: | Must be grater than last month",
+        previousReading);
 
     nCMUsed = presentReading - previousReading;
 
-    printLeftRight( "Enter the classification as a consumer: | [C]ommercial or [R]esidential");
+    printLeftRight("Enter the classification as a consumer: | [C]ommercial or [R]esidential");
 
     while (true) {
       cType = keyboard.nextLine().toLowerCase().charAt(0);
 
       if (!(cType == 'r' || cType == 'c')) {
         print("[C]ommercial and [R]esidential", 'e');
-      }
-      else break;
+      } else
+        break;
     }
 
     switch (cType) {
       case 'r':
-      amountDue = minBillResidential;
-      if (nCMUsed > minCMResidential) {
-        amountDue += (nCMUsed - minCMResidential) * rateResidential;
-      }
-      break;
+        amountDue = minBillResidential;
+        if (nCMUsed > minCMResidential) {
+          amountDue += (nCMUsed - minCMResidential) * rateResidential;
+        }
+        break;
       case 'c':
-      amountDue = minBillCommercial;
-      if (nCMUsed > minCMCommercial) {
-        amountDue += (nCMUsed - minCMCommercial) * rateCommercial;
-      }
-      break;
+        amountDue = minBillCommercial;
+        if (nCMUsed > minCMCommercial) {
+          amountDue += (nCMUsed - minCMCommercial) * rateCommercial;
+        }
+        break;
     }
 
     createMenu(menuWidth, 7, 5, 1);
     print("Water Bill Receipt", 't');
     calculatedAnswer = new String[] {
-      String.format("Consumer Name: [%s]", consumer),
-      String.format("Last Month's Reading: [%d]", previousReading),
-      String.format("Current Month's Reading: [%d]", presentReading),
-      String.format("Consumption this Month: [%d]", nCMUsed),
-      String.format("Amount Due: [%.2f]", amountDue)
+        String.format("Consumer Name: [%s]", consumer),
+        String.format("Last Month's Reading: [%d]", previousReading),
+        String.format("Current Month's Reading: [%d]", presentReading),
+        String.format("Consumption this Month: [%d]", nCMUsed),
+        String.format("Amount Due: [%.2f]", amountDue)
     };
     print(calculatedAnswer, 'a');
-} // end of main
+  } // end of main
 
   public static void showDescription() {
     menuHeight = getLineCount(description) + questions.length + 2;
@@ -573,14 +573,12 @@ public class Test {
 
       String startErrorMsg = "Invalid Characters: ";
       String errorMsg = startErrorMsg;
-      String removedLeading = name.stripLeading();
-      String removedTrailing = name.stripTrailing();
 
-      if (!removedLeading.equals(name)) {
+      if (Character.isWhitespace(name.charAt(0))) {
         errorMsg += "[Leading Space]";
       }
 
-      if (!removedTrailing.equals(name)) {
+      if (Character.isWhitespace(name.charAt(name.length() - 1))) {
         errorMsg += "[Trailing Space]";
       }
 
@@ -812,7 +810,7 @@ public class Test {
   public static String[] mathSumOfSeries(int[] inputs) {
     int number = inputs[0];
 
-    int sum = number * (number - 1) / 2;
+    int sum = number * (number + 1) / 2;
 
     String[] textArr = {
         String.format("The sum of the series [%d] is %d", number, sum)
@@ -851,6 +849,10 @@ public class Test {
         isPrimeBool = false;
         break;
       }
+    }
+
+    if (number == 1) {
+      isPrimeBool = false;
     }
 
     String isPrimeText = isPrimeBool ? "a prime number" : "not a prime number";
@@ -1057,8 +1059,7 @@ public class Test {
     String enter = "Press Enter to Continue...";
     int start = lPad + (menuWidth - enter.length()) - 5;
 
-    String text =
-        String.format("\033[%dC", start) +
+    String text = String.format("\033[%dC", start) +
         blackBG +
         enter +
         defaultBG;
@@ -1099,7 +1100,6 @@ public class Test {
 
   public static int[] inputPositiveInt(String[] questions) {
     int[] answers = new int[questions.length];
-    int answerCount = 0;
 
     for (int i = 0; i < answers.length; i++) {
       answers[i] = inputRangeInt(questions[0], 0);
@@ -1135,7 +1135,7 @@ public class Test {
         clearComment(num, "√");
         if (num <= min) {
           print("Value must be greater than " + "[" + min + "]", 'e');
-        } else if (num >= max){
+        } else if (num >= max) {
           print("Value must be less than " + "[" + max + "]", 'e');
         } else {
           return num;
@@ -1148,7 +1148,6 @@ public class Test {
 
   public static int[] inputRangeInt(int min, int max) {
     int[] answers = new int[questions.length];
-    int answerCount = 0;
 
     for (int i = 0; i < answers.length; i++) {
       answers[i] = inputRangeInt(questions[i], min, max);
@@ -1171,7 +1170,7 @@ public class Test {
         answers += num + " ";
         if (num < randomInt) {
           print("Answer must be bigger than [" + num + "]", 'e');
-        } else if (num > randomInt){
+        } else if (num > randomInt) {
           print("Answer must be smaller than [" + num + "]", 'e');
         } else {
           break;
@@ -1183,7 +1182,6 @@ public class Test {
 
     return answers;
   }
-
 
   public static double[] inputPositiveDouble(String[] questions) {
     double[] answers = new double[questions.length];
@@ -1257,7 +1255,7 @@ public class Test {
         rightTextCount = text.length();
         padCount = menuWidth - rightTextCount - leftTextCount - 2;
         printValue += updateCursor;
-        printValue += "\033[" + (leftTextCount + padCount)+ "C";
+        printValue += "\033[" + (leftTextCount + padCount) + "C";
         break;
       case 'e':
         rightTextCount = text.length();
@@ -1267,7 +1265,6 @@ public class Test {
         printValue += String.format("%" + padCount + "s", "");
         break;
     }
-
 
     switch (type) {
       case 't':
@@ -1287,7 +1284,6 @@ public class Test {
         color = redFG;
         break;
     }
-
 
     if (text.indexOf("[") != -1) {
       String regex = "(\\[)(.+?)(\\])";
@@ -1374,7 +1370,6 @@ public class Test {
     return result;
   }
 
-  
   public static String center(String s, int size) {
     return center(s, size, ' ');
   }
@@ -1385,7 +1380,7 @@ public class Test {
 
   public static String center(String s, int size, char pad) {
     if (s == null || size <= s.length())
-    return s;
+      return s;
 
     StringBuilder sb = new StringBuilder(size);
     for (int i = 0; i < (size - s.length()) / 2; i++) {
