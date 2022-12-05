@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="finished FinalsExercise5{A,B,C}">
-      <change afterPath="$PROJECT_DIR$/src/finals/exam/PimentelIoriMidtermExamPart2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/finals/exercises/FinalsExercise6.java" afterDir="false" />
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Done Finals Seatwork">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,13 @@
   </component>
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="origin/master" />
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,13 +74,13 @@
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.finals.exam.PimentelIoriMidtermExamPart2">
-    <configuration name="FinalsExercise4F" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise4F" />
+  <component name="RunManager" selected="Application.SeatWork">
+    <configuration name="FinalsExercise5A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5A" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="finals.exercises.GradeCalculatorUsingArrays" />
+          <option name="PATTERN" value="finals.exam.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinalsExercise5A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5A" />
+    <configuration name="SeatWork" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.SeatWork" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="finals.exam.*" />
+          <option name="PATTERN" value="finals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,10 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SeatWork" />
         <item itemvalue="Application.finals.exam.PimentelIoriMidtermExamPart2" />
         <item itemvalue="Application.finals.exercises.FinalsExercise5B" />
         <item itemvalue="Application.finals.exercises.FinalsExercise5C" />
-        <item itemvalue="Application.finals.exercises.FinalsExercise5A" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +256,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668406687179</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Finals Exam, FinalsExercise6">
+      <created>1670218868884</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670218868884</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Done Finals Seatwork">
+      <created>1670220627121</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670220627121</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +311,8 @@
     <MESSAGE value="Sorting Algos" />
     <MESSAGE value="fixed finals 4d-4f" />
     <MESSAGE value="finished FinalsExercise5{A,B,C}" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished FinalsExercise5{A,B,C}" />
+    <MESSAGE value="Finals Exam, FinalsExercise6" />
+    <MESSAGE value="Done Finals Seatwork" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done Finals Seatwork" />
   </component>
 </project>

@@ -298,7 +298,7 @@ public class Search {
       "Back to Main Menu"
     };
 
-    String choice = getChoice(options, "Math Routines [Sub Menu]");
+    String choice = getChoice(options, "Math Routines [Sub Menu]", "b");
 
     menuWidth = 50;
     title = String.format("Zetta Utils [Math Routine %s]", choice);
@@ -333,7 +333,7 @@ public class Search {
       mathRoutine14(); break;
       case "15":
       mathRoutine15(); break;
-      case "16":
+      case "b":
       clearScreen();
       return;
     }
@@ -351,7 +351,7 @@ public class Search {
       "Back to Main Menu"
     };
 
-    String choice = getChoice(options, "Recording Routines [Sub Menu]");
+    String choice = getChoice(options, "Recording Routines [Sub Menu]", "b");
 
     doWrapBool = false;
     menuWidth = 80;
@@ -368,7 +368,7 @@ public class Search {
       recordingRoutine3(); break;
       case "4":
       recordingRoutine4(); break;
-      case "5":
+      case "b":
       clearScreen();
       return;
     }
@@ -527,7 +527,7 @@ public class Search {
       "Back to Main Menu"
     };
 
-    String choice = getChoice(options, "Miscellaneous Routines [Sub Menu]");
+    String choice = getChoice(options, "Miscellaneous Routines [Sub Menu]", "b");
 
     menuWidth = 80;
     switch (choice) {
@@ -549,8 +549,9 @@ public class Search {
       // miscRoutine8(); break;
       case "9":
       miscRoutine9(); break;
-      // case "10":
-      // miscRoutine10(); break;
+      case "b":
+      clearScreen();
+      return;
     }
   }
 
@@ -749,6 +750,8 @@ public class Search {
   }
 
   public static void showDescription() {
+    doWrapBool = true;
+    clearScreen();
     menuHeight = getLineCount(description) + questions.length + 2;
     createMenu(menuWidth, menuHeight, 5, 1);
 
