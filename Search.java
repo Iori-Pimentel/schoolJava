@@ -82,11 +82,10 @@ public class Search {
       "Math Routines",
       "Recording Routines",
       "Miscellaneous Routines",
-      "Search Routine",
       "Exit"
     };
 
-    String choice = getChoice(options, "Main Menu", "s", "q");
+    String choice = getChoice(options, "Main Menu", "q");
 
     switch (choice) {
       case "1":
@@ -95,127 +94,11 @@ public class Search {
       showRecordMenu(); break;
       case "3":
       showMiscMenu(); break;
-      case "s":
-      try {
-      searchRoutine();
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-      break;
       case "q":
       closeProgram(); break;
     }
   }
 
-  public static void searchRoutine() throws IOException, InterruptedException {
-    clearScreen();
-    doWrapBool = false;
-    String[] search = {
-      "Determine whether an integer is odd or even",
-      "Determine sum of a series",
-      "Determine the factors of a number",
-      "Determine if a number is prime",
-      "Determine the area of a circle",
-      "Determine the area of a square",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a triangle",
-      "Determine the area of a rectangle",
-      "Determine the area of a trapezoid",
-      "Determine the area of a parallelogram",
-      "Determine if an integer is a perfect number",
-      "Generate a multiplication table",
-      "Determine the roots of a quadratic equation",
-      "Generate a Fibonacci Sequence",
-      "Generate a Pascal's Triangle",
-      "Back to Main Menu"
-    };
-
-    createMenu(50, 10, 5, 1);
-    print("Search Bar", 't');
-
-    String [] copySearch = Arrays.copyOfRange(search, 0, menuHeight - 3);
-    print(copySearch, 'd');
-    
-    String[] cmdRaw = {"/bin/sh", "-c", "stty raw </dev/tty"};
-    Runtime.getRuntime().exec(cmdRaw).waitFor();
-    
-    int read = -1;
-    StringBuilder sb = new StringBuilder();
-    byte[] buff = new byte[1];
-
-    String[] matchSearch = new String[copySearch.length];
-    while ((read = System.in.read(buff, 0, 1)) != -1) {
-      String space = String.format("%" + (menuWidth - 2)+ "s", " ");
-      Arrays.fill(matchSearch, space);
-      int matchCount = 0;
-
-      if (127 == (int) buff[0]) {
-        if(sb.length() > 0 ) {
-          sb.setLength(sb.length() - 1 );
-          System.out.print("\033[3D   \033[3D");
-        } else {
-          System.out.print("\033[2D  \033[2D");
-        }
-      } else if (13 == (int) buff[0]) {
-        System.out.print("\033[2D  ");
-        break;
-      } else {
-        sb.append((char) buff[0]);
-      }
-
-      if (sb.toString().length() > 0) {
-        String[] toSearch = sb.toString().toLowerCase().split(" ");
-
-        for (int i = 0; i < search.length; i++) {
-          if (matchCount > copySearch.length - 1) {
-            break;
-          }
-          boolean found = true;
-          for (String word : toSearch) {
-            if (!search[i].toLowerCase().contains(word)) {
-              found = false;
-            }
-          }
-          if (found) {
-            int amount = menuWidth - search[i].length() - 2;
-            String space2 = String.format("%" + (amount)+ "s", " ");
-            matchSearch[matchSearch.length - matchCount - 1] = search[i] + space2;
-            matchCount++;
-          }
-        }
-      } else {
-        for (int i = 0; i < copySearch.length - 1; i++) {
-          int amount = menuWidth - search[i].length() - 2;
-          String space2 = String.format("%" + (amount)+ "s", " ");
-          matchSearch[matchSearch.length - i - 1] = search[i] + space2;
-        }
-      }
-
-      System.out.print("\033[1G");
-      for (int i = 0; i < copySearch.length + 1; i++) {
-        System.out.print("\033[1A");
-      }
-      for (int i = 0; i < lPad + 2; i++) {
-        System.out.print("\033[1C");
-      }
-      print(matchSearch, 'd');
-      for (int i = 0; i < sb.toString().length(); i++) {
-        System.out.print("\033[1C");
-      }
-    }
-
-    System.out.println(sb);
-
-    System.out.println("Cloaed");
-    String[] cmdCooked = {"/bin/sh", "-c", "stty cooked </dev/tty"};
-    Runtime.getRuntime().exec(cmdCooked).waitFor();
-    doWrapBool = true;
-  }
 
 
   public static void closeProgram() {
@@ -242,7 +125,7 @@ public class Search {
     for (int i = numberedOptions; i < options.length; i++) {
       options[i] = String.format("[%s] ", endOptions[i - numberedOptions]) + options[i];
 
-      if (i < (9 - numberedOptions) && options.length > 9) {
+      if (options.length > 9) {
         options[i] = " " + options[i];
       }
     }
@@ -533,8 +416,8 @@ public class Search {
     switch (choice) {
       case "1":
       miscRoutine1(); break;
-      // case "2":
-      // miscRoutine2(); break;
+      case "2":
+      miscRoutine2(); break;
       // case "3":
       // miscRoutine3(); break;
       case "4":
@@ -563,6 +446,13 @@ public class Search {
     inputCorrectGuess(randomInt);
   }
 
+  public static void miscRoutine2() {
+    title = "Miscellaneous Routines [Miscellaneous Routine 2]";
+    description = "Routine to do a Covid Self Assessment";
+
+    selfAssess();
+  }
+
   public static void miscRoutine4() {
     title = "Miscellaneous Routines [Miscellaneous Routine 4]";
     description = "Routine to play a Number Guessing Game";
@@ -582,6 +472,10 @@ public class Search {
     description = "Routine to Calculate Water Bill";
 
     mobileLoadBalance();
+  }
+
+  public static void selfAssess() {
+    
   }
 
   public static void interestMoney() {
