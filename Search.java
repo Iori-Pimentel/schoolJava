@@ -66,10 +66,13 @@ public class Search {
   public static void showIntroduction() {
     menuWidth = 60;
 
+    System.out.println("If you can see this, then the Terminal GUI will not work");
     clearScreen();
 
     String[] startText = {
       "Project made while in Saint Louis University as Finals Exercise 7",
+      "",
+      "Use a Terminal/Console that supports ANSI Escape Codes like VSCode",
       "",
       "",
       "Iori Z. Pimentel",
@@ -1403,6 +1406,7 @@ public class Search {
 
     System.out.print(text);
     keyboard.nextLine();
+    System.out.println("If you can see this, then the Terminal GUI will not work");
     clearScreen();
   }
 
