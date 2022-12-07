@@ -11,7 +11,7 @@ import java.util.Random;
 import java.lang.*;
 import java.math.*;
 
-public class Search {
+public class PimentelIoriMidtermExamPart2 {
 
 /*
 * Global Variables
