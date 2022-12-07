@@ -1,17 +1,17 @@
 /**
 * Name: Iori Z. Pimentel
-* Date: Nov 28, 2022
+* Date: Dec 7, 2022
 * Activity Name and Number: Finals Exercise 7
 ------------------------------------------------------------
+ Use VSCode or a terminal that supports ANSI Escape Codes to see GUI
 */
-package finals.exercises;
-import java.io.IOException;
-import java.util.*;
+package finals.exercises; //  Use VSCode or a terminal that supports ANSI Escape Codes to see GUI
+import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.Random;
-import java.lang.*;
-import java.math.*;
+import java.util.Scanner;
 
-public class PimentelIoriMidtermExamPart2 {
+public class PimentelIoriProgramming1Project { //  Use VSCode or a terminal that supports ANSI Escape Codes to see GUI
 
 /*
 * Global Variables
@@ -39,7 +39,7 @@ public class PimentelIoriMidtermExamPart2 {
   public static String saveCursor = "\033[s";
   public static String updateCursor = "\033[u";
 
-  public static void main(String[] args) {
+  public static void main(String[] args) { //  Use VSCode or a terminal that supports ANSI Escape Codes to see GUI
     handleClose();
     showIntroduction();
 
@@ -55,7 +55,8 @@ public class PimentelIoriMidtermExamPart2 {
           Thread.sleep(200);
           System.out.println("Shutting down ...");
           clearScreen();
-          System.out.println("Program Closed...");
+          System.out.println("\nProgram Closed...\n");
+          System.out.println("Thank you for using...");
         } catch (InterruptedException e) {
           Thread.currentThread().interrupt();
           e.printStackTrace();
@@ -67,7 +68,7 @@ public class PimentelIoriMidtermExamPart2 {
   public static void showIntroduction() {
     menuWidth = 60;
 
-    System.out.println("If you can see this, then the Terminal GUI will not work");
+    System.out.println("\nIf you can see this, then the Terminal GUI will not work. \nUse VSCode or a terminal that supports ANSI Escape Codes\"");
     clearScreen();
 
     String[] startText = {
@@ -150,7 +151,7 @@ public class PimentelIoriMidtermExamPart2 {
       String input = "";
       int choice;
       try {
-        input = keyboard.nextLine();
+        input = keyboard.nextLine().toLowerCase();
         choice = Integer.parseInt(input);
       } catch (NumberFormatException e) {
         for (String charOpt : endOptions) {
@@ -413,7 +414,7 @@ public class PimentelIoriMidtermExamPart2 {
       "Interest of Money Invested ",
       "Income Tax Computation",
       "Insect Population Growth Rate",
-      "Water Bill computaion.",
+      "Water Bill computation.",
       "Electric Bill computation.",
       "Mobile Phone Load Balance Computation.",
       "Back to Main Menu"
@@ -475,7 +476,7 @@ public class PimentelIoriMidtermExamPart2 {
   }
 
   public static void miscRoutine4() {
-    description = "Routine to play a Number Guessing Game";
+    description = "Routine to calculate interest from the bank";
 
     interestMoney();
   }
@@ -582,14 +583,14 @@ public class PimentelIoriMidtermExamPart2 {
 
 
     calculatedAnswer = new String[] {
-      String.format("1000s: [%d]", thousandsBill),
-      String.format("500s: [%d]", fiveHundredsBill),
-      String.format("100s: [%d]", hundredsBill),
-      String.format("50s: [%d]", fiftiesBill),
-      String.format("20s: [%d]", twentiesBill),
-      String.format("10s: [%d]", tensBill),
-      String.format("5s: [%d]", fivesBill),
-      String.format("1s: [%d]", change)
+            (thousandsBill == 0) ? "---" : String.format("1000s: [%d]", thousandsBill),
+            (fiveHundredsBill == 0) ? "---" : String.format("500s: [%d]", fiveHundredsBill),
+            (hundredsBill == 0) ? "---" : String.format("100s: [%d]", hundredsBill),
+            (fiftiesBill == 0) ? "---" : String.format("50s: [%d]", fiftiesBill),
+            (twentiesBill == 0) ? "---" : String.format("20s: [%d]", twentiesBill),
+            (tensBill == 0) ? "---" : String.format("10s: [%d]", tensBill),
+            (fivesBill == 0) ? "---" : String.format("5s: [%d]", fivesBill),
+            (change == 0) ? "---" : String.format("1s: [%d]", change)
     };
   }
 
@@ -642,17 +643,13 @@ public class PimentelIoriMidtermExamPart2 {
     char opt;
 
     annualRate = 0.05F; 
-
-    title = "Interest Bank";
-    description = "Give";
-
     createMenu(menuWidth, 5, 5, 1);
     print(title, 't');
     print(description, 'd');
     System.out.print("\033[1B");
 
     year = inputRangeInt("Enter the year: | 1900-2100", 1900, 2100);
-    initialPrincipal = inputRangeInt("Enter the intial principal: | Rich", 0);
+    initialPrincipal = inputRangeInt("Enter the initial principal: | Valid value", 0);
 
     quarterlyRate = annualRate / 4; 
     currentPrincipal = initialPrincipal;
@@ -660,7 +657,7 @@ public class PimentelIoriMidtermExamPart2 {
 
     for (quarter = 1; quarter <= 4; quarter++) {
       title = String.format("Quarter [%d]", quarter);
-      createMenu(menuWidth, 8, 5, 1);
+      createMenu(menuWidth, 6, 5, 1);
       print(title, 't');
       print("Choice: ", 'i');
 
@@ -779,8 +776,6 @@ public class PimentelIoriMidtermExamPart2 {
       break;
     }
 
-    createMenu(menuWidth, 7, 5, 1);
-    print("Water Bill Receipt", 't');
     calculatedAnswer = new String[] {
       String.format("Consumer Name: [%s]", consumer),
       String.format("Last Month's Reading: [%d]", previousReading),
@@ -788,7 +783,6 @@ public class PimentelIoriMidtermExamPart2 {
       String.format("Consumption this Month: [%d]", nCMUsed),
       String.format("Amount Due: [%.2f]", amountDue)
     };
-    print(calculatedAnswer, 'a');
   }
 
   public static void electricBill() {
@@ -844,8 +838,6 @@ public class PimentelIoriMidtermExamPart2 {
       break;
     }
 
-    createMenu(menuWidth, 7, 5, 1);
-    print("Water Bill Receipt", 't');
     calculatedAnswer = new String[] {
       String.format("Consumer Name: [%s]", consumer),
       String.format("Last Month's Reading: [%d]", previousReading),
@@ -853,7 +845,6 @@ public class PimentelIoriMidtermExamPart2 {
       String.format("Consumption this Month: [%d]", nUsed),
       String.format("Amount Due: [%.2f]", amountDue)
     };
-    print(calculatedAnswer, 'a');
   }
 
   public static void showDescription() {
@@ -1029,7 +1020,7 @@ public class PimentelIoriMidtermExamPart2 {
 
   public static void mathRoutine6() {
     description = "Routine to calculate the area of a " +
-    "sqaure given the side length";
+    "square given the side length";
 
     questions = new String[] {
       "Input: | Side Length"
@@ -1407,7 +1398,7 @@ public class PimentelIoriMidtermExamPart2 {
 
     System.out.print(text);
     keyboard.nextLine();
-    System.out.println("If you can see this, then the Terminal GUI will not work");
+    System.out.println("\nIf you can see this, then the Terminal GUI will not work. \nUse VSCode or a terminal that supports ANSI Escape Codes");
     clearScreen();
   }
 
@@ -1675,10 +1666,8 @@ public class PimentelIoriMidtermExamPart2 {
       color = blueFG;
       break;
       case 'a':
-      color = greenFG;
-      break;
       case 'c':
-      color = greenFG;
+        color = greenFG;
       break;
       case 'e':
       color = redFG;
@@ -1696,8 +1685,6 @@ public class PimentelIoriMidtermExamPart2 {
 
     switch (type) {
       case 't':
-      printValue += "\033[u";
-      break;
       case 'a':
       case 'd':
       case 'c':

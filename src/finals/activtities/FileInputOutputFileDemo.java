@@ -1,31 +1,22 @@
 /**
 * Name: Iori Z. Pimentel
-* Date: Nov 28, 2022
-* Activity Name and Number: Finals Exercise 6
+* Date: Dec 7, 2022
+* Activity Name and Number: Finals Activity
 ------------------------------------------------------------
 
- Activity:
-
- Study the following program.  Be able to figure out
-  what is done by the program.
-
- Where appropriate, provide the required
-  comments. Every required comment briefly explains
-  what is done by the corresponding part of the
-  program.
-
- REQUIRED:
- Use the provided datafile.txt as the text file that has inputs
-   for the program.  Show a sample run below:
-
- Sample Run:
-
-   Copy and paste below the content
-   of the output screen after successfully executing the program
-
+ CS 111,Introduction to Computing(lec),2,90,PASSED
+ CS 111L,Introduction to Computing(lab),1,95,PASSED
+ CS 112,Computer Programming 1(lec),2,87,PASSED
+ CS 112L,Computer Programming 1(lab),1,89,PASSED
+ CS 113,Discrete Structures,3,88,PASSED
+ GMATH,Mathematics in the Modern World,3,93,PASSED
+ GART,Art Appreciation,3,98,PASSED
+ GHIST,Readings in Philippine History,3,98,PASSED
+ FIT HW,Physical Activity (Health and Wellness),2,99,PASSED
+ CFE 101,God's Journey with His People,3,98,PASSED
  * */
 
-package finals.activities;
+package finals.activtities;
 
 import java.io.*;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Done Finals Seatwork">
+    <list default="true" id="1f6eebd2-e6a6-4574-8b50-da285954bda1" name="Changes" comment="Update Search.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/finals/exercises/FileInputOutputFileDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/activtities/FileInputOutputFileDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/finals/exercises/PimentelIoriProgramming1Project.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,7 @@
     <hideBySeverity>
       <option value="300" />
     </hideBySeverity>
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2EKvCms1aOMnv91bWo3blj0D6i2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -74,13 +75,26 @@
       <recent name="prelim.exercises" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SeatWork">
-    <configuration name="FinalsExercise5A" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5A" />
+  <component name="RunManager" selected="Application.PimentelIoriProgramming1Project">
+    <configuration name="PimentelIoriMidtermExamPart2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.PimentelIoriMidtermExamPart2" />
       <module name="Pimentel2234663" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="finals.exam.*" />
+          <option name="PATTERN" value="finals.exercises.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PimentelIoriProgramming1Project" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.exercises.PimentelIoriProgramming1Project" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.exercises.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,6 +115,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="finals.activtities.FileInputOutputFileDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="finals.activtities.FileInputOutputFileDemo" />
+      <module name="Pimentel2234663" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="finals.activtities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="finals.exam.PimentelIoriMidtermExamPart2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="finals.exam.PimentelIoriMidtermExamPart2" />
       <module name="Pimentel2234663" />
@@ -114,38 +141,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="finals.exercises.FinalsExercise5B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5B" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="finals.exam.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="finals.exercises.FinalsExercise5C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="finals.exercises.FinalsExercise5C" />
-      <module name="Pimentel2234663" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="finals.exam.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PimentelIoriProgramming1Project" />
+        <item itemvalue="Application.finals.activtities.FileInputOutputFileDemo" />
+        <item itemvalue="Application.PimentelIoriMidtermExamPart2" />
         <item itemvalue="Application.SeatWork" />
         <item itemvalue="Application.finals.exam.PimentelIoriMidtermExamPart2" />
-        <item itemvalue="Application.finals.exercises.FinalsExercise5B" />
-        <item itemvalue="Application.finals.exercises.FinalsExercise5C" />
       </list>
     </recent_temporary>
   </component>
