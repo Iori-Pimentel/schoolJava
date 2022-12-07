@@ -1,3 +1,9 @@
+/**
+* Name: Iori Z. Pimentel
+* Date: Nov 28, 2022
+* Activity Name and Number: Finals Exercise 6
+------------------------------------------------------------
+*/
 import java.io.IOException;
 import java.util.*;
 import java.util.Random;
@@ -6,6 +12,9 @@ import java.math.*;
 
 public class Search {
 
+/*
+* Global Variables
+*/
   public static String title;
   public static String description;
   public static String[] questions;
@@ -30,7 +39,7 @@ public class Search {
   public static String updateCursor = "\033[u";
 
   public static void main(String[] args) {
-    // handleClose();
+    handleClose();
     showIntroduction();
 
     while (true) {
@@ -237,11 +246,12 @@ public class Search {
     String choice = getChoice(options, "Recording Routines [Sub Menu]", "b");
 
     doWrapBool = false;
-    menuWidth = 80;
+    menuWidth = 60;
     questions = new String[] {
       "Amount to Sort: | Write the Intended Value"
     };
 
+    title = String.format("Zetta Utils [Recording Routine %s]", choice);
     switch (choice) {
       case "1":
       recordingRoutine1(); break;
@@ -350,7 +360,6 @@ public class Search {
 
   public static void recordingRoutine1() {
     String[] names;
-    title = "Recording Routines [Record Routine 1]";
     description = "Routine to sort list of names of Students";
 
     names = stringInputMenu();
@@ -361,7 +370,6 @@ public class Search {
 
   public static void recordingRoutine2() {
     String[] names;
-    title = "Recording Routines [Record Routine 2]";
     description = "Routine to sort list of names of Salesmen";
 
     names = stringInputMenu();
@@ -373,7 +381,6 @@ public class Search {
   public static void recordingRoutine3() {
     String[] names;
     int[] grades;
-    title = "Recording Routines [Record Routine 3]";
     description = "Routine to sort list of [names] and grades";
 
     names = stringInputMenu();
@@ -386,7 +393,6 @@ public class Search {
   public static void recordingRoutine4() {
     String[] names;
     int[] grades;
-    title = "Recording Routines [Record Routine 4]";
     description = "Routine to sort list of names and [grades]";
 
     names = stringInputMenu();
@@ -412,70 +418,213 @@ public class Search {
 
     String choice = getChoice(options, "Miscellaneous Routines [Sub Menu]", "b");
 
+    title = String.format("Zetta Utils [Miscellaneous Routine %s]", choice);
     menuWidth = 80;
     switch (choice) {
       case "1":
       miscRoutine1(); break;
       case "2":
       miscRoutine2(); break;
-      // case "3":
-      // miscRoutine3(); break;
+      case "3":
+      miscRoutine3(); break;
       case "4":
       miscRoutine4(); break;
-      // case "5":
-      // miscRoutine5(); break;
-      // case "6":
-      // miscRoutine6(); break;
+      case "5":
+      miscRoutine5(); break;
+      case "6":
+      miscRoutine6(); break;
       case "7":
       miscRoutine7(); break;
-      // case "8":
-      // miscRoutine8(); break;
+      case "8":
+      miscRoutine8(); break;
       case "9":
       miscRoutine9(); break;
       case "b":
       clearScreen();
       return;
     }
+    showAnswer();
+    clearScreen();
   }
 
   public static void miscRoutine1() {
-    title = "Miscellaneous Routines [Miscellaneous Routine 1]";
     description = "Routine to play a Number Guessing Game";
 
     int randomInt = rand.nextInt(100);
     inputCorrectGuess(randomInt);
+
+    title = "You Guessed it";
+    calculatedAnswer = new String[] {
+      "Congratulations"
+    };
   }
 
   public static void miscRoutine2() {
-    title = "Miscellaneous Routines [Miscellaneous Routine 2]";
     description = "Routine to do a Covid Self Assessment";
 
     selfAssess();
   }
 
+  public static void miscRoutine3() {
+    description = "Routine to calculate bills distribution";
+
+    billsDistribution();
+  }
+
   public static void miscRoutine4() {
-    title = "Miscellaneous Routines [Miscellaneous Routine 4]";
     description = "Routine to play a Number Guessing Game";
 
     interestMoney();
   }
 
+  public static void miscRoutine5() {
+    description = "Routine for Income Tax Computation";
+
+    taxComputation();
+  }
+
+  public static void miscRoutine6() {
+    description = "Routine to Calculate Insect Population Growth";
+
+    insectPopulation();
+  }
+
   public static void miscRoutine7() {
-    title = "Miscellaneous Routines [Miscellaneous Routine 7]";
     description = "Routine to Calculate Water Bill";
 
     waterBill();
   }
 
+  public static void miscRoutine8() {
+    description = "Routine to Calculate Electric Bill";
+
+    electricBill();
+  }
+
   public static void miscRoutine9() {
-    title = "Miscellaneous Routines [Miscellaneous Routine 9]";
-    description = "Routine to Calculate Water Bill";
+    description = "Routine to calculate Load Balance";
 
     mobileLoadBalance();
   }
 
-  public static void selfAssess() {
+  public static void insectPopulation() {
+
+    title = "Water Bill";
+    description = "Give";
+
+    createMenu(menuWidth, 5, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+    System.out.print("\033[1B");
+
+    int initialSize = inputRangeInt("Enter the initial size: | Insect Colony Size", 0);
+    int finalSize = inputRangeInt("Enter the final size: | Insect Colony Size", initialSize);
+
+    int rateOfGrowth = (finalSize - initialSize) * 100 / initialSize;
+    calculatedAnswer = new String[] {
+      String.format("Rate of Growth: [%d]", rateOfGrowth)
+    };
+  }
+
+  public static void taxComputation() {
+    createMenu(menuWidth, 4, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+    System.out.print("\033[1B");
+
+    double taxDue;
+    double taxableIncome = inputRangeDouble("Taxable Income: | How much?", 0);
+
+    if (taxableIncome <= 250_000)
+      taxDue = 0;
+    else if (taxableIncome <= 400_000)
+      taxDue = 0.20 * (taxableIncome - 250_000);
+    else if (taxableIncome <= 800_000)
+      taxDue = 30_000 + 0.25 * (taxableIncome - 400_000);
+    else if (taxableIncome <= 2_000_000)
+      taxDue = 130_000 + 0.30 * (taxableIncome - 800_000);
+    else if (taxableIncome <= 8_000_000)
+      taxDue = 490_000 + 0.32 * (taxableIncome - 2_000_000);
+    else
+      taxDue = 2_410_000 + 0.35 * (taxableIncome - 8_000_000);
     
+    calculatedAnswer = new String[] {
+      String.format("Taxable Income: [%.2f]", taxableIncome),
+      String.format("Tax Due: [%.2f]", taxDue)
+    };
+  }
+
+  public static void billsDistribution() {
+    createMenu(menuWidth, 4, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+    System.out.print("\033[1B");
+    int bill = inputRangeInt("Bills to Distribute: | How much?", 0);
+    int change = bill;
+
+    int thousandsBill = change / 1000;
+    change = change % 1000;
+    int fiveHundredsBill = change / 500;
+    change = change % 500;
+    int hundredsBill = change / 100;
+    change = change % 100;
+    int fiftiesBill = change / 50;
+    change = change % 50;
+    int twentiesBill = change / 20;
+    change = change % 20;
+    int tensBill = change / 10;
+    change = change % 10;
+    int fivesBill = change / 5;
+    change = change % 5;
+
+
+    calculatedAnswer = new String[] {
+      String.format("1000s: [%d]", thousandsBill),
+      String.format("500s: [%d]", fiveHundredsBill),
+      String.format("100s: [%d]", hundredsBill),
+      String.format("50s: [%d]", fiftiesBill),
+      String.format("20s: [%d]", twentiesBill),
+      String.format("10s: [%d]", tensBill),
+      String.format("5s: [%d]", fivesBill),
+      String.format("1s: [%d]", change)
+    };
+  }
+
+  public static void selfAssess() {
+    createMenu(menuWidth, 7, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+    System.out.print("\033[1B");
+
+    String[] questions = {
+      "Are you experiencing coughing?  | [Yes] [No]",
+      "Are you experiencing sickness?  | [Yes] [No]",
+      "Are you experiencing difficulty breathing?  | [Yes] [No]"
+    };
+
+    for (String question : questions) {
+      boolean valid = false;
+      printLeftRight(question);
+      while (!valid) {
+        String answer = keyboard.nextLine();
+        clearComment(answer, "√");
+
+        if ("Yes".equalsIgnoreCase(answer)) {
+          calculatedAnswer = new String[] {
+            "You should check out a doctor"
+          };
+          return;
+        } else if ("No".equalsIgnoreCase(answer)) {
+          valid = true;
+        } else {
+          print("[Yes] or [No]", 'e');
+        }
+      }
+    }
+    calculatedAnswer = new String[] {
+      "You should be fine"
+    };
+
   }
 
   public static void interestMoney() {
@@ -499,8 +648,8 @@ public class Search {
     print(description, 'd');
     System.out.print("\033[1B");
 
-    year = inputRangeInt("Enter the year | 1900-2100", 1900, 2100);
-    initialPrincipal = inputRangeInt("Enter the intial principal | Rich", 0);
+    year = inputRangeInt("Enter the year: | 1900-2100", 1900, 2100);
+    initialPrincipal = inputRangeInt("Enter the intial principal: | Rich", 0);
 
     quarterlyRate = annualRate / 4; 
     currentPrincipal = initialPrincipal;
@@ -508,18 +657,18 @@ public class Search {
 
     for (quarter = 1; quarter <= 4; quarter++) {
       title = String.format("Quarter [%d]", quarter);
-      createMenu(menuWidth, 6, 5, 1);
+      createMenu(menuWidth, 8, 5, 1);
       print(title, 't');
       print("Choice: ", 'i');
 
+      print("[D]eposit | [W]ithdraw | [C]ontinue | [Q]uit", 'c');
       while (true) {
-        print("[D]eposit | [W]ithdraw | [C]ontinue | [Q]uit and Withdraw All", 'c');
         String input = keyboard.nextLine();
         opt = input.toLowerCase().charAt(0);
         clearComment(input, "√");
 
         if (!(opt == 'd' || opt == 'w' || opt == 'c' || opt == 'q')) {
-          print("[D]eposit | [W]ithdraw | [C]ontinue | [Q]uit and Withdraw All", 'e');
+          print("[D]eposit | [W]ithdraw | [C]ontinue | [Q]uit", 'e');
         } else break;
       }
 
@@ -538,24 +687,25 @@ public class Search {
       }
 
       System.out.print("\033[1B");
-      print(String.format("%6s%8s%16s%30s%n", "Year", "Quarter", "Interest", "Amount") ,'a');
-      print(String.format("%6s%8d%16.2f%30.2f%n", year, quarter, interest, currentPrincipal), 'a');
+      print(String.format("%8s%16s%16s%n", "Quarter", "Interest", "Amount") ,'a');
+      print(String.format("%8d%16.2f%16.2f%n", quarter, interest, currentPrincipal), 'a');
 
       if (opt == 'q') {
         break;
       }
     }
 
-    clearScreen();
+    title = "Final Principal";
+    calculatedAnswer = new String[] {
+      String.format("Final Principal: [%.2f]", currentPrincipal)
+    };
   } 
 
   public static void mobileLoadBalance() {
-    title = "Water Bill";
-    description = "Give";
-
-    createMenu(menuWidth, 10, 5, 1);
+    createMenu(menuWidth, 8, 5, 1);
     print(title, 't');
     print(description, 'd');
+    System.out.print("\033[1B");
 
     questions = new String[] {
       "Prepaid Load Amount: | Amount",
@@ -565,25 +715,20 @@ public class Search {
       "Rate per Text: | Amount"
     };
 
-    inputRangeInt(0);
+    int[] answers = inputRangeInt(0);
 
+    int answer = answers[0] - ((answers[1] * answers[3]) + (answers[2] * answers[4]));
     calculatedAnswer = new String[] {
-      // String.format("Consumer Name: [%s]", consumer),
-      // String.format("Last Month's Reading: [%d]", previousReading),
-      // String.format("Current Month's Reading: [%d]", presentReading),
-      // String.format("Consumption this Month: [%d]", nCMUsed),
-      // String.format("Amount Due: [%.2f]", amountDue)
+      String.format("Remaining Amount of Prepaid Load: [%d]", answer),
     };
-    print(calculatedAnswer, 'a');
   }
 
   public static void waterBill() {
-    title = "Water Bill";
-    description = "Give";
 
-    createMenu(menuWidth, 10, 5, 1);
+    createMenu(menuWidth, 7, 5, 1);
     print(title, 't');
     print(description, 'd');
+    System.out.print("\033[1B");
 
     String consumer;
     char cType;
@@ -638,6 +783,71 @@ public class Search {
       String.format("Last Month's Reading: [%d]", previousReading),
       String.format("Current Month's Reading: [%d]", presentReading),
       String.format("Consumption this Month: [%d]", nCMUsed),
+      String.format("Amount Due: [%.2f]", amountDue)
+    };
+    print(calculatedAnswer, 'a');
+  }
+
+  public static void electricBill() {
+
+    createMenu(menuWidth, 7, 5, 1);
+    print(title, 't');
+    print(description, 'd');
+    System.out.print("\033[1B");
+
+    String consumer;
+    char cType;
+
+    int nUsed; 
+    int minResidential = 12;
+    double minBillResidential = 180.00; 
+    float rateResidential = 30.00F; 
+    int minCommercial = 30;
+    double minBillCommercial = 600.00; 
+    float rateCommercial = 50.00F;
+    double amountDue = 0.0; 
+
+    print("Enter the consumer's name: ", 'i');
+    consumer = inputValidName();
+
+    int previousReading = inputRangeInt("Enter the meter reading last month: | Must be positive", 0);
+    int presentReading = inputRangeInt("Enter the meter reading this month: | Must be grater than last month", previousReading);
+
+    nUsed = presentReading - previousReading;
+
+    printLeftRight("Enter the classification as a consumer: | [C]ommercial or [R]esidential");
+
+    while (true) {
+      cType = keyboard.nextLine().toLowerCase().charAt(0);
+
+      if (!(cType == 'r' || cType == 'c')) {
+        print("[C]ommercial and [R]esidential", 'e');
+      } else
+      break;
+    }
+
+    switch (cType) {
+      case 'r':
+      amountDue = minBillResidential;
+      if (nUsed > minResidential) {
+        amountDue += (nUsed - minResidential) * rateResidential;
+      }
+      break;
+      case 'c':
+      amountDue = minBillCommercial;
+      if (nUsed > minCommercial) {
+        amountDue += (nUsed - minCommercial) * rateCommercial;
+      }
+      break;
+    }
+
+    createMenu(menuWidth, 7, 5, 1);
+    print("Water Bill Receipt", 't');
+    calculatedAnswer = new String[] {
+      String.format("Consumer Name: [%s]", consumer),
+      String.format("Last Month's Reading: [%d]", previousReading),
+      String.format("Current Month's Reading: [%d]", presentReading),
+      String.format("Consumption this Month: [%d]", nUsed),
       String.format("Amount Due: [%.2f]", amountDue)
     };
     print(calculatedAnswer, 'a');
@@ -757,7 +967,7 @@ public class Search {
     description = "Routine to determine if a given number is even or odd.";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Even or Odd"
     };
 
     showDescription();
@@ -769,7 +979,7 @@ public class Search {
     description = "Routine to determine the sum of a series";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Sum of Input"
     };
 
     showDescription();
@@ -781,7 +991,7 @@ public class Search {
     description = "Routine to determine the factors of an integer";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Factors of Input"
     };
 
     showDescription();
@@ -793,7 +1003,7 @@ public class Search {
     description = "Routine to determine if a number is prime";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Prime or Not"
     };
 
     showDescription();
@@ -806,7 +1016,7 @@ public class Search {
     "circle given a radius";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Radius"
     };
 
     showDescription();
@@ -819,7 +1029,7 @@ public class Search {
     "sqaure given the side length";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Side Length"
     };
 
     showDescription();
@@ -832,8 +1042,8 @@ public class Search {
     "triangle given the base length and height";
 
     questions = new String[] {
-      "give: | integer output",
-      "give: | integer output"
+      "Base: | Base of Triangle",
+      "Height: | Height of Triangle"
     };
 
     showDescription();
@@ -846,8 +1056,8 @@ public class Search {
     "rectangle given the width and height";
 
     questions = new String[] {
-      "give: | integer output",
-      "give: | integer output"
+      "Width: | Width of Rectangle",
+      "Height: | Height of Rectangle"
     };
 
     showDescription();
@@ -860,9 +1070,9 @@ public class Search {
     "trapezoid given two of the bases and the height";
 
     questions = new String[] {
-      "give: | integer output",
-      "give: | integer output",
-      "give: | integer output"
+      "Base [A]: | Base of Trapezoid",
+      "Base [B]: | Base of Trapezoid",
+      "Height: | Height of Trapezoid"
     };
 
     showDescription();
@@ -875,8 +1085,8 @@ public class Search {
     "parallelogram given the base and height";
 
     questions = new String[] {
-      "give: | integer output",
-      "give: | integer output"
+      "Base: | Parallelogram",
+      "Height: | Parallelogram"
     };
 
     showDescription();
@@ -888,7 +1098,7 @@ public class Search {
     description = "Routine to determine if a number is a perfect number";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Perfect or Not"
     };
 
     showDescription();
@@ -900,7 +1110,7 @@ public class Search {
     description = "Routine to create a Multiplication Table of a given size";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Size of Table"
     };
 
     showDescription();
@@ -912,9 +1122,9 @@ public class Search {
     description = "Routine to determine the roots given the three values";
 
     questions = new String[] {
-      "Give: | Integer Output",
-      "Give: | Integer Output",
-      "Give: | Integer Output"
+      "[a] Value: | A",
+      "[b] Value: | B",
+      "[c] Value: | C"
     };
 
     showDescription();
@@ -927,7 +1137,7 @@ public class Search {
     "the amount to create";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Count of Sequence"
     };
 
     showDescription();
@@ -939,7 +1149,7 @@ public class Search {
     description = "Create a Pascal Triangle given the size";
 
     questions = new String[] {
-      "Give: | Integer Output"
+      "Input: | Size of Pascal"
     };
 
     showDescription();
@@ -1291,7 +1501,7 @@ public class Search {
   }
 
   public static String inputCorrectGuess(int randomInt) {
-    createMenu(menuWidth, menuHeight, 5, 1);
+    createMenu(menuWidth, 3, 5, 1);
     print("Number Guessing Game", 't');
     String answers = "";
     int num = 0;
@@ -1404,7 +1614,7 @@ public class Search {
   }
 
   public static void print(String text, char type) {
-    if (type == 't' || type == 'i' || !doWrapBool) {
+    if (type == 't' || type == 'i' || type == 'e'|| !doWrapBool) {
       printUtil(text, type);
       return;
     }
