@@ -69,9 +69,8 @@ public class Search {
     clearScreen();
 
     String[] startText = {
-      "Saint Louis University University University University University University",
-      "Baguio City ",
-      "---------------------------------------------",
+      "Project made while in Saint Louis University as Finals Exercise 7",
+      "",
       "",
       "Iori Z. Pimentel",
       "Programmer"
