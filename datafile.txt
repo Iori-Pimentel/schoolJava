@@ -1,0 +1,10 @@
+CS 111,Introduction to Computing(lec),2,90
+CS 111L,Introduction to Computing(lab),1,95
+CS 112,Computer Programming 1(lec),2,87
+CS 112L,Computer Programming 1(lab),1,89
+CS 113,Discrete Structures,3,88
+GMATH,Mathematics in the Modern World,3,93
+GART,Art Appreciation,3,98
+GHIST,Readings in Philippine History,3,98
+FIT HW,Physical Activity (Health and Wellness),2,99
+CFE 101,God's Journey with His People,3,98
